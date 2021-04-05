@@ -191,4 +191,8 @@ nav .start-contact, a:nth-child(4):hover~.animation {
         width: 100%;
     }
 
+    nav .start-about, a:nth-child(2):hover~.animation {
+        background-color: transparent;
+    }
+
 }
