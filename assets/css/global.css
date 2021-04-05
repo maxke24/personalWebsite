@@ -23,7 +23,6 @@ article{
     overflow: auto;
     background-image: linear-gradient(to bottom right, #34495e, transparent);
     box-shadow: 1px 1px 2px 0 #292929;
-    flex-direction: row;
 }
 
 article::-webkit-scrollbar {
