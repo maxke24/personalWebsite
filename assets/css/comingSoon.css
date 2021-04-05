@@ -1,0 +1,21 @@
+body{
+    overflow: hidden;
+}
+
+article{
+    width: 100%;
+    left: 0;
+    position: absolute;
+    margin-left: 0;
+    top: 0;
+    height: 100%;
+    z-index: -1;
+}
+
+h1{
+    font-size: 128px;
+    transform: rotate(12deg) translate(-42%, -14%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
