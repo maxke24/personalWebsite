@@ -118,6 +118,10 @@ nav .start-contact, a:nth-child(4):hover~.animation {
     background-color: #9b59b6;
 }
 
+.closebtn, #openMenu{
+    display: none;
+}
+
 @media (max-width: 600px) {
     nav {
         height: 100%;
@@ -182,6 +186,10 @@ nav .start-contact, a:nth-child(4):hover~.animation {
 
     nav .start-home, a:nth-child(1):hover~.animation{
         display: none;
+    }
+
+    .closebtn, #openMenu{
+        display: initial;
     }
 
 }
