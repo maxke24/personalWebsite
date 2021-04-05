@@ -13,12 +13,17 @@
     <title>About | personal website</title>
 </head>
 <body>
+<p id="openMenu">&#9776; open</p>
 <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="contact.html">Contact</a>
-    <div class="animation start-home"></div>
+    <a class="closebtn" >&times;</a>
+    <div id="overlay">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+        <div class="animation start-home"></div>
+
+    </div>
 </nav>
 <main>
     <article>
@@ -75,7 +80,7 @@
         <p>Stock clerk and cashier</p>
     </article>
 </main>
-
+<script src="assets/js/index.js"></script>
 
 </body>
 </html>
