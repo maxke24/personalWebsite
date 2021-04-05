@@ -7,7 +7,6 @@ body{
     backdrop-filter: blur(5px);
     height: 100%;
     width: 100%;
-    position: fixed;
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
     -moz-user-select: none; /* Firefox */
