@@ -1,0 +1,57 @@
+body{
+    background-image: url(../images/background.jpg);
+    background-size: cover;
+    font-family: 'Lexend', sans-serif;
+    backdrop-filter: blur(5px);
+    margin: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+main{
+    height: 100%;
+}
+
+article{
+    background: inherit;
+    width: 20rem;
+    height: 30rem;
+    position: relative;
+    top: 5rem;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+    /*border: solid 1px white;*/
+    /*border-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5)) 10*/
+}
+
+article:before{
+    content: " ";
+    width: 30rem;
+    height: 40rem;
+    background: inherit;
+    position: absolute;
+    left: -25px;
+    right: 0;
+    top: -25px;
+    bottom: 0;
+    box-shadow: inset 0 0 0 200rem rgba(0, 0, 0, 0.3);
+    filter: blur(20px);
+}
+
+article:after{
+    position: absolute;
+    top: -4px; bottom: -4px;
+    left: -4px; right: -4px;
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5));
+    content: '';
+    z-index: -1;
+    border-radius: 1rem;
+}
+
+article h1{
+    color: white;
+    padding: 1rem;
+}
