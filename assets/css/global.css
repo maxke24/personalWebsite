@@ -122,7 +122,7 @@ nav .start-contact, a:nth-child(4):hover~.animation {
     display: none;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1300px) {
     nav {
         height: 100%;
         width: 0;
