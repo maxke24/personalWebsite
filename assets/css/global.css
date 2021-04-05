@@ -76,6 +76,7 @@ nav a {
     text-align: center;
     color: white;
     cursor: pointer;
+    width: 7rem;
 }
 nav .animation {
     position: absolute;
@@ -90,37 +91,24 @@ nav .animation {
     color: white;
 }
 
-a:nth-child(1) {
-    width: 100px;
-}
-a:nth-child(2) {
-    width: 110px;
-}
-a:nth-child(3) {
-    width: 100px;
-}
-a:nth-child(4) {
-    width: 160px;
-}
-
 nav .start-about, a:nth-child(2):hover~.animation {
-    width: 110px;
-    left: 100px;
+    width: 7rem;
+    left: 7rem;
     background-color: #e74c3c;
 }
 nav .start-home, a:nth-child(1):hover~.animation {
-    width: 100px;
+    width: 7rem;
     left: 0;
     background-color: #1abc9c;
 }
 nav .start-portfolio, a:nth-child(3):hover~.animation {
-    width: 100px;
-    left: 210px;
+    width: 7rem;
+    left: 14rem;
     background-color: #3498db;
 }
 nav .start-contact, a:nth-child(4):hover~.animation {
-    width: 160px;
-    left: 310px;
+    width: 7rem;
+    left: 21rem;
     background-color: #9b59b6;
 }
 
