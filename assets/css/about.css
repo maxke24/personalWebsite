@@ -11,9 +11,8 @@ article{
     margin-bottom: 1rem;
 }
 
-@media (max-width: 1050px) {
-    /*main {*/
-    /*    flex-direction: column;*/
-    /*    flex-flow: wrap;*/
-    /*}*/
+@media (max-width: 1840px) {
+    body{
+        overflow: auto;
+    }
 }
