@@ -22,7 +22,16 @@ class Vehicle  extends p5.Vector{
         line(normal.x, normal.y, pos.x, pos.y);
         fill(255, 0, 0);
         noStroke();
+
+        let d = p5.Vector.dist(normal, obstacle);
+        if (d < obstacle.r - this.r/2){
+            fill(255, 0, 0);
+        }else{
+            fill(0, 255, 0);
+        }
         circle(normal.x, normal.y, 16);
+
+
     }
 
   seek(target) {
@@ -78,10 +87,9 @@ class Vehicle  extends p5.Vector{
 
 function getNormalPoint(pos, a, v){
     const ap = p5.Vector.sub(pos, a);
-    const ab = p5.Vector.sub(b, a);
 
     v.normalize();
-    v.mult(ap.dot(ab));
+    v.mult(ap.dot(v));
 
-    return p5.Vector.add(a, ab);
+    return p5.Vector.add(a, v);
 }
