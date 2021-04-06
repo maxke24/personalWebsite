@@ -129,7 +129,7 @@ nav .start-contact, a:nth-child(4):hover~.animation {
 
 #colorChangeButtons {
     position: fixed;
-    top: 1rem;
+    bottom: 1rem;
     left: 1rem;
     border-radius:1rem;
     background-color: rgba(52, 73, 94, 0.98);
@@ -161,12 +161,13 @@ nav .start-contact, a:nth-child(4):hover~.animation {
         margin-top: 0;
     }
 
-    #overlay {
+    #overlay, #colorChangeButtons {
         position: relative;
         top: 25%;
         width: 100%;
         text-align: center;
         margin-top: 30px;
+        box-shadow: none;
     }
 
     nav a {
