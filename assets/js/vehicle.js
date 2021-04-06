@@ -1,45 +1,74 @@
 "use strict";
-class Vehicle  extends p5.Vector{
+class Vehicle{
     constructor(x, y) {
-        super(x, y);
+        this.pos = createVector(x, y);
         this.vel = createVector(0, 0);
         this.acc = createVector(0, 0);
         this.maxSpeed = 4;
-        this.maxForce = 0.25;
+        this.maxForce = 0.5;
         this.r = 16;
-        this.seeingFactor = 50;
 
 
     }
 
-    avoid(obstacle){
-        let pos = obstacle.copy();
-        let vehiclePos = createVector(this.x, this.y);
+  arrive(target) {
+        let desired = p5.Vector.sub(target, this.pos);
+        let d = desired.mag();
+        desired.normalize();
 
-        let normal = getNormalPoint(pos, vehiclePos, this.vel.copy());
-
-        stroke(255)
-        line(normal.x, normal.y, pos.x, pos.y);
-        fill(255, 0, 0);
-        noStroke();
-
-        let d = p5.Vector.dist(normal, obstacle);
-        if (d < obstacle.r - this.r/2){
-            fill(255, 0, 0);
+        if(d < 100){
+            let m = map(d, 0, 100, 0, this.maxSpeed);
+            desired.mult(m)
         }else{
-            fill(0, 255, 0);
+            desired.mult(this.maxSpeed);
         }
-        circle(normal.x, normal.y, 16);
 
-
+        let steer = p5.Vector.sub(desired, this.vel);
+        steer.limit(this.maxForce);
+        this.applyForce(steer);
     }
 
-  seek(target) {
-        let force = p5.Vector.sub(target, this);
+    seek(target) {
+        let force = p5.Vector.sub(target, this.pos);
         force.setMag(this.maxSpeed);
         force.sub(this.vel);
         force.limit(this.maxForce);
         this.applyForce(force);
+    }
+
+    follow(path){
+        let predict = this.vel.copy();
+        predict.normalize();
+        predict.mult(50);
+        let predictLoc = p5.Vector.add(this.pos, predict);
+
+        let normal, target, distance;
+        let worldRecord = 10000000000000000;
+
+
+        for(let i = 0; i < path.points.length - 1; i++){
+           let  a = path.points[i].copy();
+            let b = path.points[i+1].copy();
+            let normalPoint = getNormalPoint(predictLoc, a, b);
+            if(normalPoint.x < min(a.x, b.x) || normalPoint.x > max(a.x, b.x)){
+                normalPoint = b.copy();
+            }
+            distance = p5.Vector.dist(normalPoint, predictLoc);
+            if(distance < worldRecord){
+                worldRecord = distance;
+                normal = normalPoint
+
+                let dir = p5.Vector.sub(b,a);
+                dir.normalize();
+                dir.mult(10);
+                target = normalPoint.copy();
+                target.add(dir)
+            }
+        }
+        circle(target.x, target.y, 16);
+        if(worldRecord > path.radius){
+            this.seek(target);
+        }
     }
 
     edges() {
@@ -63,7 +92,7 @@ class Vehicle  extends p5.Vector{
     update() {
         this.vel.add(this.acc);
         this.vel.limit(this.maxSpeed);
-        this.add(this.vel);
+        this.pos.add(this.vel);
         this.acc.set(0, 0);
     }
 
@@ -74,22 +103,28 @@ class Vehicle  extends p5.Vector{
         strokeWeight(2);
         fill(255);
         push();
-        translate(this.x, this.y);
+        translate(this.pos.x, this.pos.y);
         rotate(this.vel.heading());
         triangle(-this.r, -this.r / 2, -this.r, this.r / 2, this.r, 0);
-        noFill();
-        let seeingDistance = this.vel.mag() * 50
+/*        noFill();
+        let seeingDistance = this.seeingDistance; /!*this.vel.mag() * 50*!/
         stroke(255);
-        rect(0, -this.r / 2, seeingDistance, this.r);
+        rect(0, -this.r / 2, seeingDistance, this.r);*/
         pop();
+
+
     }
 }
 
-function getNormalPoint(pos, a, v){
-    const ap = p5.Vector.sub(pos, a);
-
-    v.normalize();
-    v.mult(ap.dot(v));
-
-    return p5.Vector.add(a, v);
+// A function to get the normal point from a point (p) to a line segment (a-b)
+// This function could be optimized to make fewer new Vector objects
+function getNormalPoint(p, a, b) {
+    // Vector from a to p
+    let ap = p5.Vector.sub(p, a);
+    let ab = p5.Vector.sub(b, a);
+    // Vector from a to b
+    ab.normalize(); // Normalize the line
+    // Project vector "diff" onto line by using the dot product
+    ab.mult(ap.dot(ab));
+    return p5.Vector.add(a, ab);
 }
