@@ -1,0 +1,14 @@
+/*:root{
+    --primary: #282c34;
+    --shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
+    --headers: white;
+}*/
+
+:root{
+    --primary: #fbe8a6;
+    --nav: #f4976c;
+    --articles: linear-gradient(to bottom right, #b4dfe5, #d2fdff);
+    --shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
+    --headers: #303c6c;
+    --subText: #303c6c94;
+}
