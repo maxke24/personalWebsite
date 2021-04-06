@@ -40,7 +40,7 @@ article{
 
 a{
     text-decoration: none;
-    color: #bbc1c1;
+    color: var(--subText);
 }
 
 article::-webkit-scrollbar {
