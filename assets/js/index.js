@@ -51,11 +51,8 @@ function setStyling(e) {
 
 $(document).ready(function () {
     $("nav").load("nav.html", () => {
-        let pageTag = document.querySelector("body").getAttribute("data-page");
         loadColors();
         document.querySelectorAll("#colorChangeButtons a").forEach(selected => selected.addEventListener("click", setStyling))
-        let navEl = document.querySelector(".animation");
-        navEl.classList.add(`start-${pageTag}`);
         document.querySelector("#openMenu").addEventListener("click", openNav);
         document.querySelector(".closebtn").addEventListener("click", closeNav);
     });
