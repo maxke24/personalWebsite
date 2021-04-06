@@ -17,7 +17,7 @@ body{
 main{
     height: 100%;
     width: 100%;
-    position: fixed;
+    position: relative;
     display: flex;
     justify-content: center;
     overflow: auto;
@@ -77,29 +77,56 @@ p, figcaption{
 
 /*--Navigation--*/
 nav {
-    margin: 27px auto 0;
+/*    margin: 27px auto 0;
     position: relative;
     width: max-content;
     height: 50px;
-    font-weight: bold;
     background-color: var(--nav);
     border-radius: 8px;
     font-size: 0;
     z-index: 2;
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow);*/
+    position: relative;
+    float: right;
+    font-weight: bold;
+    width: 100%;
+    padding: 1rem;
 }
-nav a {
-    line-height: 50px;
+
+#overlay{
+
+    float: right;
+}
+
+nav #overlay a {
+/*    line-height: 50px;
     height: 100%;
     font-size: 15px;
     display: inline-block;
     position: relative;
     z-index: 1;
-    text-decoration: none;
     text-align: center;
     color: var(--nav-text);
     cursor: pointer;
-    width: 7rem;
+    width: 7rem;*/
+    color: var(--nav-text);
+    text-decoration: none;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+nav #overlay a:hover{
+    color: grey;
+}
+
+nav #overlay a:not(:last-child){
+    border-right: 1px solid var(--nav-text);
+}
+
+nav a {
+    text-decoration: none;
+    line-height: 1.5;
 }
 nav .animation {
     position: absolute;
@@ -110,26 +137,26 @@ nav .animation {
     border-radius: 8px;
 }
 
-nav .start-about, a:nth-child(2):hover~.animation {
-    width: 7rem;
-    left: 7rem;
-    background-color: #e74c3c;
-}
-nav .start-home, a:nth-child(1):hover~.animation {
-    width: 7rem;
-    left: 0;
-    background-color: #1abc9c;
-}
-nav .start-portfolio, a:nth-child(3):hover~.animation {
-    width: 7rem;
-    left: 14rem;
-    background-color: #3498db;
-}
-nav .start-contact, a:nth-child(4):hover~.animation {
-    width: 7rem;
-    left: 21rem;
-    background-color: #9b59b6;
-}
+/*nav .start-about, a:nth-child(2):hover~.animation {*/
+/*    width: 7rem;*/
+/*    left: 7rem;*/
+/*    background-color: #e74c3c;*/
+/*}*/
+/*nav .start-home, a:nth-child(1):hover~.animation {*/
+/*    width: 7rem;*/
+/*    left: 0;*/
+/*    background-color: #1abc9c;*/
+/*}*/
+/*nav .start-portfolio, a:nth-child(3):hover~.animation {*/
+/*    width: 7rem;*/
+/*    left: 14rem;*/
+/*    background-color: #3498db;*/
+/*}*/
+/*nav .start-contact, a:nth-child(4):hover~.animation {*/
+/*    width: 7rem;*/
+/*    left: 21rem;*/
+/*    background-color: #9b59b6;*/
+/*}*/
 
 .closebtn, #openMenu{
     display: none;

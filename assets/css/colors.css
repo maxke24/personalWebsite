@@ -1,7 +1,7 @@
 :root{
     --primary: #dbedf3ff;
     --nav: #404b69ff;
-    --nav-text: white;
+    --nav-text: #20202080;
     --start-gradient: #404b69ff;
     --end-gradient: #283149ff;
     --articles: linear-gradient(to top left, var(--start-gradient), var(--end-gradient));
