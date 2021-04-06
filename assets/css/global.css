@@ -63,10 +63,11 @@ h3{
     font-size: 22px;
 }
 
-p{
+p, figcaption{
     color: var(--subText);
     font-size: 20px;
     font-weight: bold;
+    line-height: 1.2;
 }
 
 /*--Navigation--*/
