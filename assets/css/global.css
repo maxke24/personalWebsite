@@ -65,6 +65,7 @@ h3{
 
 p{
     color: var(--subText);
+    font-size: 16px;
 }
 
 /*--Navigation--*/
