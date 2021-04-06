@@ -38,6 +38,11 @@ article{
     border: 1px solid var(--border-color);
 }
 
+a{
+    text-decoration: none;
+    color: #bbc1c1;
+}
+
 article::-webkit-scrollbar {
     display: none;
 }
