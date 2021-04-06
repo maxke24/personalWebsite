@@ -35,7 +35,7 @@ article{
     overflow: auto;
     background-image: var(--articles);
     box-shadow: var(--shadow);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
 }
 
 article::-webkit-scrollbar {
@@ -60,12 +60,13 @@ h2{
 }
 
 h3{
-    font-size: 16px;
+    font-size: 22px;
 }
 
 p{
     color: var(--subText);
-    font-size: 16px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 /*--Navigation--*/

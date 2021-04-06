@@ -1,12 +1,13 @@
 "use strict";
 
-let originalColors = ["#282c34", "#282c34", "rgba(52, 73, 94, 0.4)", "rgba(0, 0, 0, 0.8)", "white", "#727575"];
+let originalColors = ["#282c34", "#282c34", "rgba(52, 73, 94, 0.4)", "rgba(0, 0, 0, 0.8)", "white", "#727575", "rgba(0, 0, 0, 0.5)"];
                     /*body-------nav--------start------end--------text--------subtext*/
-let option1colors = ["#fbe8a6", "#f4976c", "#b4dfe5", "#d2fdff", "#303c6c", "#303c6c94"];
-let option2colors = ["#5a5560", "#46344e", "#9d8d8f", "#9b786f", "#fff", "#faed2682"];
-let option3colors = ["#efe2ba", "#d79922", "#c5cbe3", "#c5cbe3", "#fff", "#4056a1b8"];
-let option4colors = ["#5d5c61", "#b1a296", "#938e94", "#938e94", "#fff", "#303c6c94"];
-let option5colors = ["#659dbd", "#bc986a", "#8d8741", "#daad86", "#fff", "#fbeec1"];
+let option1colors = ["#fbe8a6", "#f4976c", "#b4dfe5", "#d2fdff", "#303c6c", "#303c6c94", "none"];
+let option2colors = ["#5a5560", "#46344e", "#9d8d8f", "#9b786f", "#fff", "#faed2682", "#none"];
+let option3colors = ["#efe2ba", "#d79922", "#c5cbe3", "#c5cbe3", "#fff", "#4056a1b8", "#none"];
+let option4colors = ["#5d5c61", "#b1a296", "#938e94", "#938e94", "#fff", "#303c6c94", "#none"];
+let option5colors = ["#5d5c61", "#b1a296", "#938e94", "#938e94", "#fff", "#303c6c94", "#fbeec1"];
+let option6colors = ["#659dbd", "#bc986a", "#8d8741", "#daad86", "#fff", "#fbeec1", "#none"];
 
 document.addEventListener("DOMContentLoaded", init);
 
@@ -35,6 +36,9 @@ function setStyling(e) {
         case "5":
             colorOptions = option5colors;
             break;
+        case "6":
+            colorOptions = option6colors;
+            break;
 
         default:
             colorOptions = originalColors;
@@ -48,4 +52,5 @@ function setStyling(e) {
     document.documentElement.style.setProperty('--end-gradient', colorOptions[3]);
     document.documentElement.style.setProperty('--headers', colorOptions[4]);
     document.documentElement.style.setProperty('--subText', colorOptions[5]);
+    document.documentElement.style.setProperty('--border-color', colorOptions[6]);
 }
