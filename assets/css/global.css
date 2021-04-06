@@ -77,15 +77,6 @@ p, figcaption{
 
 /*--Navigation--*/
 nav {
-/*    margin: 27px auto 0;
-    position: relative;
-    width: max-content;
-    height: 50px;
-    background-color: var(--nav);
-    border-radius: 8px;
-    font-size: 0;
-    z-index: 2;
-    box-shadow: var(--shadow);*/
     position: relative;
     float: right;
     font-weight: bold;
@@ -99,16 +90,6 @@ nav {
 }
 
 nav #overlay a {
-/*    line-height: 50px;
-    height: 100%;
-    font-size: 15px;
-    display: inline-block;
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    color: var(--nav-text);
-    cursor: pointer;
-    width: 7rem;*/
     color: var(--nav-text);
     text-decoration: none;
     padding: 0.5rem;

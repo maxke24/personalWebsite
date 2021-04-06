@@ -6,7 +6,7 @@
     --end-gradient: #283149ff;
     --articles: linear-gradient(to top left, var(--start-gradient), var(--end-gradient));
     --shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
-    --headers: #ffffffff;
-    --subText: #ffffffff;
+    --headers: var(--nav-text);
+    --subText: var(--nav-text);
     --border-color: #e16428ff;
 }
