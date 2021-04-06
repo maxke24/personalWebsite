@@ -3,9 +3,9 @@ let originalColors = ["#282c34", "#282c34", "rgba(52, 73, 94, 0.4)", "rgba(0, 0,
 /*body-------nav--------start------end--------text--------subtext*/
 let option1colors = ["#fbe8a6", "#f4976c", "#b4dfe5", "#d2fdff", "#303c6c", "#303c6c94", "none"];
 let option2colors = ["#5a5560", "#46344e", "#9d8d8f", "#9b786f", "#fff", "#faed2682", "#none"];
-let option3colors = ["#efe2ba", "#d79922", "#c5cbe3", "#c5cbe3", "#fff", "#4056a1b8", "#none"];
-let option4colors = ["#5d5c61", "#b1a296", "#938e94", "#938e94", "#fff", "#303c6c94", "#none"];
-let option5colors = ["#5d5c61", "#b1a296", "#938e94", "#938e94", "#fff", "#303c6c94", "#fbeec1"];
+let option3colors = ["#5d5c61", "#b1a296", "#938e94", "#938e94", "#fff", "#303c6c94", "#none"];
+let option4colors = ["#5d5c61", "#b1a296", "#938e94", "#938e94", "#fff", "#303c6c94", "#fbeec1"];
+let option5colors = ["#5d5c61", "#46344e", "#46344e", "#46344e", "#fff", "#938e94", "#fbeec1"];
 let option6colors = ["#659dbd", "#bc986a", "#8d8741", "#daad86", "#fff", "#fbeec1", "#none"];
 
 
@@ -20,7 +20,6 @@ function setStyling(e) {
     e.preventDefault();
     const id = e.target.getAttribute("data-value");
     let colorOptions;
-    console.log(id);
     switch (id) {
         case "1":
             colorOptions = option1colors;
@@ -40,7 +39,6 @@ function setStyling(e) {
         case "6":
             colorOptions = option6colors;
             break;
-
         default:
             colorOptions = originalColors;
             break;
