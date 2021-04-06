@@ -1,14 +1,10 @@
-/*:root{
+:root{
     --primary: #282c34;
+    --nav: #282c34;
+    --start-gradient: rgba(52, 73, 94, 0.4);
+    --end-gradient: rgba(0, 0, 0, 0.8);
+    --articles: linear-gradient(to top left, var(--start-gradient), var(--end-gradient));
     --shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
     --headers: white;
-}*/
-
-:root{
-    --primary: #fbe8a6;
-    --nav: #f4976c;
-    --articles: linear-gradient(to bottom right, #b4dfe5, #d2fdff);
-    --shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
-    --headers: #303c6c;
-    --subText: #303c6c94;
+    --subText: #727575;
 }
