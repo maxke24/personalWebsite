@@ -45,7 +45,6 @@ function setStyling(e) {
             break;
 
     }
-    console.log(colorOptions);
     document.documentElement.style.setProperty('--primary', colorOptions[0]);
     document.documentElement.style.setProperty('--nav', colorOptions[1]);
     document.documentElement.style.setProperty('--start-gradient', colorOptions[2]);
@@ -53,4 +52,5 @@ function setStyling(e) {
     document.documentElement.style.setProperty('--headers', colorOptions[4]);
     document.documentElement.style.setProperty('--subText', colorOptions[5]);
     document.documentElement.style.setProperty('--border-color', colorOptions[6]);
+    closeNav();
 }
