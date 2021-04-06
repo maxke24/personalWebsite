@@ -19,5 +19,9 @@ H
 assets/css/portfolio.css,a\6\a6a18881a609eeeb6a7131437f62c478b210c10c
 D
 assets/css/index.css,c\7\c727b236df3a9f69c7dc5affcc2bcd18f0858ba6
-S
-#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+8
+nav.html,e\b\eb06c45374940c469508e638d82c8af2ac0083ef
+E
+assets/css/colors.css,4\7\47a1b13db9c5baf03dca6bd3a586cc22dedd93ec
+B
+assets/js/index.js,6\e\6e10b6243840913397efb556ef3c9d9fdcf1b447

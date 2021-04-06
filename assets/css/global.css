@@ -133,20 +133,26 @@ nav .start-contact, a:nth-child(4):hover~.animation {
     position: fixed;
     z-index: 10;
     bottom: 1rem;
+    overflow: auto;
+    height: 20rem;
     left: 1rem;
-    border-radius:1rem;
+    border-radius: 1rem;
     background-color: rgba(52, 73, 94, 0.98);
     box-shadow: var(--shadow);
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 #colorChangeButtons a{
-    padding: 8px;
     text-decoration: none;
     font-size: 36px;
+    height: auto;
     color: white;
     display: block;
+    width: 10rem;
     transition: 0.3s;
-    width: 100%;
 }
 
 @media (max-width: 1050px) {
