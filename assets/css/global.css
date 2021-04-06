@@ -89,7 +89,7 @@ nav {
     float: right;
 }
 
-nav #overlay a {
+nav a {
     color: var(--nav-text);
     text-decoration: none;
     padding: 0.5rem;
@@ -160,13 +160,8 @@ nav .animation {
 }
 
 #colorChangeButtons a{
-    text-decoration: none;
-    font-size: 36px;
-    height: auto;
     color: white;
     display: block;
-    width: 10rem;
-    transition: 0.3s;
 }
 
 @media (max-width: 1050px) {
