@@ -1,11 +1,11 @@
 :root{
-    --primary: #164A41;
-    --nav: #39603D;
-    --start-gradient: #3C403D;
-    --end-gradient: #39603D;
+    --primary: #2c2b3c;
+    --nav: #403f4c;
+    --start-gradient: #121420;
+    --end-gradient: #1b2432;
     --articles: linear-gradient(to bottom right, var(--start-gradient), var(--end-gradient));
     --shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.5);
-    --headers: #DADED4;
-    --subText: #DADED4 ;
-    --border-color: #F1B24A;
+    --headers: #F6E8EA;
+    --subText: #F6E8EA ;
+    --border-color: #b76d68;
 }
