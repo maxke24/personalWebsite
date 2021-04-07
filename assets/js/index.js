@@ -37,13 +37,11 @@ $(document).ready(function()
 	{
 		document.querySelector("#openMenu").addEventListener("click", openNav);
 		document.querySelector(".closebtn").addEventListener("click", closeNav);
-
 		if (document.querySelector("body").getAttribute("data-page") !== "portfolio")
 		{
 			$("#home").on('click', function(event)
 			{
 				event.preventDefault();
-
 				closeNav();
 				$('html, body').animate(
 				{
@@ -53,7 +51,14 @@ $(document).ready(function()
 
 			$("#about").on('click', function(event)
 			{
-
+				closeNav();
+				$('html, body').animate(
+				{
+					scrollTop: $("#about>section").offset().top
+				}, 800);
+			});
+			$("button").on('click', function(event)
+			{
 				closeNav();
 				$('html, body').animate(
 				{

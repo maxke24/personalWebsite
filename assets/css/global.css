@@ -1,4 +1,8 @@
 /* --Containers-- */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Lexend, sans-serif;
   color: var(--headers);

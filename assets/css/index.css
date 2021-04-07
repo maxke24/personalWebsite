@@ -17,7 +17,7 @@ section {
   padding-bottom: 1vw
 }
 
-main article:first-child section>* {
+main article+section>* {
   width: 60%
 }
 
@@ -80,6 +80,21 @@ article:not(#about) h2 {
 
 h4 {
   color: #89abe3
+}
+
+main>article>section>button {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  width: 6vw;
+  bottom: 0rem;
+  top: 20vh;
+  cursor: pointer;
+}
+
+svg {
+  width: 100%;
+  height: auto;
 }
 
 @media (max-width:800px) {
