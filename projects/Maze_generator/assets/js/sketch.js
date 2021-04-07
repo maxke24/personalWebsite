@@ -1,4 +1,4 @@
-let res = 50;
+let res = 20;
 let cols;
 let rows;
 let grid = [];
@@ -10,18 +10,29 @@ function setup(){
     background(51);
     cols = Math.floor(width/res);
     rows = Math.floor(height/res);
+    grid = new Array(rows);
+    for (let i = 0; i < rows; i++){
+        grid[i] = new Array(cols);
+    }
+    visited = new Array(rows);
+    for (let i = 0; i < rows; i++){
+        visited[i] = new Array(cols);
+    }
     for(let j = 0; j < rows; j++){
         for(let i = 0; i < cols; i++){
-            grid.push(new Cell(i, j));
+            grid[i][j] = new Cell(i, j);
         }
     }
-    current = grid[0];
+    current = grid[0][0];
 }
 
 function draw(){
-    background(51);
-    for(let i = 0; i < grid.length; i++){
-        grid[i].show();
+    background(25);
+    for(let i = 0; i < cols; i++){
+        for(let j = 0; j < rows; j++){
+            grid[i][j].show();
+
+        }
     }
 
     current.visited = true;

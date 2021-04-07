@@ -9,7 +9,7 @@ let counter = 0;
 function setup() {
 	createCanvas(window.innerWidth, window.innerHeight);
 	colorMode(HSB, 360, 255, 255);
-	background(51);
+	background(25);
 
 	N = int(pow(2, order));
 	total = N * N;
@@ -23,7 +23,7 @@ function setup() {
 }
 
 function draw() {
-	background(51);
+	background(25);
 
 	stroke(255);
 	strokeWeight(1);

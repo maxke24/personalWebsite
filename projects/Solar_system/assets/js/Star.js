@@ -1,7 +1,7 @@
 class Star {
 	constructor() {
 		this.lifeTime = 255;
-		this.r = random(2, 5);
+		this.r = random(1, 5);
 		this.pos = createVector(random(width), random(height));
 	}
 
@@ -10,8 +10,8 @@ class Star {
 	}
 
 	show() {
-		stroke(255, this.lifeTime);
-		fill(255);
+		fill(255, this.lifeTime);
+		noStroke();
 		ellipse(this.pos.x, this.pos.y, this.r);
 	}
 }

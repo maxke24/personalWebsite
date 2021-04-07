@@ -8,7 +8,7 @@ let wind;
 function setup() {
     createCanvas(windowWidth, windowHeight);
     colorMode(HSB);
-    background(51);
+    background(25);
     gravity = createVector(0, 0.2);
     let begin = createVector(width / 2, height);
     let end = createVector(width / 2, height - 250);
@@ -34,7 +34,7 @@ function growTree() {
 }
 
 function draw() {
-    background(13);
+    background(25);
     let grow = true;
     tree.forEach(branch => {
         branch.update();

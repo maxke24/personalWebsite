@@ -33,10 +33,19 @@ class Cell{
 
     checkNeighbors() {
         let neighbors = [];
-        let top = grid[index(this.row, this.col-1)];
-        let right = grid[index(this.row + 1, this.col)];
-        let bottom = grid[index(this.row, this.col + 1)];
-        let left = grid[index(this.row - 1, this.col)];
+        let top, right, bottom, left;
+        if(this.col - 1 >= 0){
+            top = grid[index(this.row)][index(this.col - 1)];
+        }
+        if(this.row + 1 <= rows - 1){
+            right = grid[index(this.row + 1)][index(this.col)];
+        }
+        if(this.col + 1 <= cols - 1){
+            bottom = grid[index(this.row)][index(this.col + 1)];
+        }
+        if(this.row - 1 >= 0){
+            left = grid[index(this.row - 1)][index(this.col)];
+        }
         if(top && !top.visited){
             neighbors.push(top);
         }
@@ -56,16 +65,13 @@ class Cell{
             return undefined
         }
     }
-
-
-
 }
 
-function index(row, col){
-    if (row < 0 || col < 0 || row > rows - 1 || col > cols - 1){
+function index(index){
+    if (index < 0 || index > cols - 1){
         return undefined;
     }else{
-        return row + col * cols;
+        return index;
     }
 }
 

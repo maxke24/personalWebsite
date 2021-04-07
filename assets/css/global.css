@@ -1,247 +1,224 @@
-/*--containers--*/
-body{
-    font-family: 'Lexend', sans-serif;
-    color: var(--headers);
-    height: 100%;
-    width: 100%;
-    background-color: var(--primary);
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
+/* --Containers-- */
+body {
+  font-family: Lexend, sans-serif;
+  color: var(--headers);
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--primary);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none
 }
 
-main{
-    height: 100%;
-    width: 100%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    overflow: auto;
+section::-webkit-scrollbar {
+  display: none
 }
 
-article{
-    background: inherit;
-    width: 20rem;
-    height: 45rem;
-    position: relative;
-    top: 2rem;
-    margin: 0 0.5rem;
-    border-radius: 1rem;
-    padding: 1rem;
-    background-image: var(--articles);
-    box-shadow: var(--shadow);
-    border: 1px solid var(--border-color);
-}
-
-a{
-    text-decoration: none;
-    color: var(--subText);
-}
-
-article::-webkit-scrollbar {
-    display: none;
-}
-
-article{
-    -ms-overflow-style: none;
-}
-
-/*--text--*/
-h1, h2, h3, p{
-    padding: 0.5rem;
-}
-
-h1{
-    font-size: 32px;
-}
-
-h2{
-    font-size: 24px;
-}
-
-h3{
-    font-size: 22px;
-}
-
-p, figcaption{
-    color: var(--subText);
-    font-size: 20px;
-    font-weight: bold;
-    line-height: 1.2;
-}
-
-/*--Navigation--*/
-nav {
-    position: relative;
-    float: right;
-    font-weight: bold;
-    width: 100%;
-    padding: 1rem;
-}
-
-#overlay{
-
-    float: right;
-}
-
-nav a {
-    color: var(--nav-text);
-    text-decoration: none;
-    padding: 0.5rem;
-    font-size: 1.5rem;
-    line-height: 1.5;
-}
-
-nav #overlay a:hover{
-    color: white;
-}
-
-nav #overlay a:not(:last-child){
-    border-right: 1px solid var(--nav-text);
-}
-
-nav a {
-    text-decoration: none;
-    line-height: 1.5;
-}
-nav .animation {
-    position: absolute;
-    height: 100%;
-    top: 0;
-    z-index: 0;
-    transition: all .5s ease 0s;
-    border-radius: 8px;
-}
-
-/*nav .start-about, a:nth-child(2):hover~.animation {*/
-/*    width: 7rem;*/
-/*    left: 7rem;*/
-/*    background-color: #e74c3c;*/
-/*}*/
-/*nav .start-home, a:nth-child(1):hover~.animation {*/
-/*    width: 7rem;*/
-/*    left: 0;*/
-/*    background-color: #1abc9c;*/
-/*}*/
-/*nav .start-portfolio, a:nth-child(3):hover~.animation {*/
-/*    width: 7rem;*/
-/*    left: 14rem;*/
-/*    background-color: #3498db;*/
-/*}*/
-/*nav .start-contact, a:nth-child(4):hover~.animation {*/
-/*    width: 7rem;*/
-/*    left: 21rem;*/
-/*    background-color: #9b59b6;*/
-/*}*/
-
-.closebtn, #openMenu{
-    display: none;
-}
-
-#colorChangeButtons {
-    position: fixed;
-    z-index: 10;
-    bottom: 1rem;
-    overflow: auto;
-    height: 20rem;
-    left: 1rem;
-    border-radius: 1rem;
-    background-color: rgba(52, 73, 94, 0.98);
-    box-shadow: var(--shadow);
+section {
+  -ms-overflow-style: none
 }
 
 ::-webkit-scrollbar {
-    display: none;
+  display: none
 }
 
-#colorChangeButtons a{
-    color: white;
+#about section {
+  background-color: var(--nav);
+  color: var(--nav-text);
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  padding: 1vw 15vw
+}
+
+/* --Text-- */
+a {
+  text-decoration: none;
+  color: var(--subText)
+}
+
+h1, h2, h3, h4, p {
+  padding: .5vw
+}
+
+h1 {
+  font-size: 5vw
+}
+
+h2 {
+  font-size: 2.4vw
+}
+
+h3 {
+  font-size: 2.3vw
+}
+
+h4 {
+  font-size: 2.2vw
+}
+
+p {
+  font-size: 2vw;
+  font-weight: 700;
+  line-height: 1.2
+}
+
+h1, h2 {
+  align-self: flex-start
+}
+
+h3, p {
+  align-self: flex-end
+}
+
+/* --Navigation-- */
+nav {
+  position: fixed;
+  font-weight: bold;
+  z-index: 10;
+  padding: 0.5vw 1vw;
+  border-radius: 0 0 0 0.3vw;
+  box-shadow: -1px 1px 5px 0 rgba(0, 0, 0, 0.5);
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+nav a {
+  color: var(--nav-text);
+  text-decoration: none;
+  padding: .5vw;
+  font-size: 1.5vw;
+  line-height: 1.5;
+  color: #fff;
+  text-decoration: none;
+  line-height: 1.5
+}
+
+#openMenu, .closebtn {
+  display: none
+}
+
+#colorChangeButtons {
+  position: fixed;
+  z-index: 10;
+  bottom: 1vw;
+  overflow: auto;
+  height: 20vw;
+  left: 1vw;
+  border-radius: 1vw;
+  background-color: rgba(52, 73, 94, 0.98);
+  box-shadow: var(--shadow);
+}
+
+#colorChangeButtons a {
+  color: white;
+  display: block;
+  width: 10vw;
+}
+
+@media (max-width:1050px) {
+  nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    padding: 0;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    background-color: rgba(52, 73, 94, .98);
+    overflow-x: hidden;
+    transition: .5s;
+    z-index: 2;
+    margin-top: 0
+  }
+
+  nav a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #fff;
     display: block;
-}
+    transition: .3s;
+    width: 100%
+  }
 
-@media (max-width: 1050px) {
-    nav {
-        height: 100%;
-        width: 0;
-        position: fixed;
-        padding: 0;
-        z-index: 10;
-        top: 0;
-        left: 0;
-        background-color: rgb(0,0,0);
-        background-color: rgba(52, 73, 94, 0.98);
-        overflow-x: hidden;
-        transition: 0.5s;
-        margin-top: 0;
-    }
+  #overlay, #colorChangeButtons {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    box-shadow: none;
+  }
 
-    #overlay, #colorChangeButtons {
-        position: relative;
-        top: 25%;
-        width: 100%;
-        text-align: center;
-        margin-top: 30px;
-        box-shadow: none;
-    }
+  #colorChangeButtons {
+    left: 0;
+    border-radius: 0;
+    height: auto;
+    background-color: transparent;
+    box-shadow: none;
+  }
 
-    nav a {
-        padding: 8px;
-        text-decoration: none;
-        font-size: 36px;
-        color: white;
-        display: block;
-        transition: 0.3s;
-        width: 100%;
-    }
+  #colorChangeButtons a {
+    width: 100%;
+  }
 
-    nav a:hover, nav a:focus {
-        background-color: var(--primary);
-    }
+  nav a:focus, nav a:hover {
+    background-color: var(--primary)
+  }
 
-    nav .closebtn {
-        font-size: 60px;
-        right: 0;
-        position: absolute;
-        width: auto;
-    }
+  #openMenu, .closebtn {
+    font-size: 8vw;
+    cursor: pointer;
+    position: fixed;
+    z-index: 2;
+    display: block;
+    padding: 0 1vw;
+    cursor: pointer
+  }
 
-    nav .closebtn.animation{
-        background-color: var(--primary);
-    }
+  a:nth-child(1):hover~.animation {
+    display: none
+  }
 
-    #openMenu{
-        font-size:30px;
-        cursor:pointer
-    }
+  a {
+    width: 100%;
+    text-align: center;
+    position: relative;
+  }
 
-    nav .start-home, a:nth-child(1):hover~.animation{
-        display: none;
-    }
+  a:nth-child(2) {
+    width: 100%
+  }
 
-    .closebtn, #openMenu{
-        display: block;
-        padding: 1rem;
-    }
+  a:nth-child(3) {
+    width: 100%
+  }
 
-    a:nth-child(1) {
-        width: 100%;
-    }
-    a:nth-child(2) {
-        width: 100%;
-    }
-    a:nth-child(3) {
-        width: 100%;
-    }
-    a:nth-child(4) {
-        width: 100%;
-    }
+  a:nth-child(4) {
+    width: 100%
+  }
 
-    nav .start-home,nav .start-about, nav .start-portfolio, nav .start-contact, a:hover~.animation {
-        background-color: transparent;
-    }
+  a:hover~.animation {
+    background-color: transparent
+  }
 
+  nav a:focus, nav a:hover {
+    background-color: transparent
+  }
 
+  .closebtn {
+    position: absolute;
+    text-align: right;
+    right: 1rem;
+  }
+
+  .open {
+    width: 100%;
+  }
+
+  .close {
+    width: 0;
+  }
 }
