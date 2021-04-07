@@ -216,6 +216,7 @@ nav a {
     position: absolute;
     text-align: right;
     right: 1rem;
+    width: auto;
   }
 
   .open {
