@@ -6,13 +6,13 @@ class Walker{
     }
 
     update(){
-        this.pos.x += random(-1, 1);
-        this.pos.y += random(-1, 1);
+        this.pos.x += random(-2, 2);
+        this.pos.y += random(-2, 2);
     }
 
     show(){
         stroke(255, 100);
         point(this.pos.x, this.pos.y);
-        strokeWeight(2);
+        strokeWeight(8);
     }
 }
