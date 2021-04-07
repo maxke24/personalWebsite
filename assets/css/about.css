@@ -5,6 +5,7 @@ p{
 main{
     flex-direction: column;
     flex-flow: wrap;
+    padding-bottom: 1rem;
 }
 
 article{
