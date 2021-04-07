@@ -98,7 +98,7 @@ nav a {
 }
 
 nav #overlay a:hover{
-    color: grey;
+    color: white;
 }
 
 nav #overlay a:not(:last-child){
