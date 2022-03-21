@@ -19,4 +19,27 @@ function init() {
 			.querySelector("section")
 			.scrollIntoView({ behavior: "smooth", block: "end" });
 	});
+
+	const experiencesSection = document.querySelector(".experiences>div");
+
+	fetch("../../experiences.json")
+	.then(response => {
+		return response.json();
+	}).then(output =>{
+		const experiences = output.Experiences
+		for(const o in experiences){
+			const el = experiences[o];
+
+			const art = `<article class="${el.Class}">
+							<div class="blur"></div>
+							<h4>${el.Location}</h4>
+							<div class="overlay">
+								<p>${el.Description}</p>
+							</div>
+						</article>`
+			console.log(el);
+			experiencesSection.innerHTML += art;
+		}
+	})
+
 }

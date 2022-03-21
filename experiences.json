@@ -1,0 +1,24 @@
+{
+    "Experiences": {    
+        "1": {
+            "Class": "kamillus",
+            "Location": "Sint-kamillus, Bierbeek",
+            "Description": "During this job, my main job was doing callcenter for the internal personal of Sint-Kamillus."
+        },
+        "2": {
+            "Class": "proximus",
+            "Location": "Proximus, Brussel",
+            "Description": "After having a studentjob as a programmer, my manager gave me the opportunity to join the datascientist team for my internship. During this internship I helped with reworking old projects."
+        },
+        "3": {
+            "Class": "stag",
+            "Location": "Stag lodge stables, London",
+            "Description": "During this internship, I created an administrative application and a website. The purpose of this, was to automise the appointment system."
+        },
+        "4": {
+            "Class": "bioplanet",
+            "Location": "Bioplanet, Korbeek-lo",
+            "Description": "This was my first studentjob, I had to fill the shelves and work at the cash register."
+        }
+    }
+}
