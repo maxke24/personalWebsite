@@ -60,17 +60,17 @@ section {
 
 section {
 	background-color: #0b2027;
-	box-shadow: inset 0px 2px 2px 1px #375d6c;
+	box-shadow: inset 0px 0.5px 0px 0px #375d6c;
 	justify-content: start;
 }
 
-.experiences > div {
+.experiences > div, .projects > div{
 	display: flex;
 	justify-content: space-around;
 	flex-wrap: wrap;
 }
 
-.experiences div article {
+.experiences div article, .projects div article {
 	width: 35%;
 	height: 25vh;
 	margin: 2rem 0;
@@ -85,12 +85,12 @@ section {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	-webkit-transition: transform 0.3s;
-	transition: transform 0.3s;
+	-webkit-transition: transform 0.3s, background 0.8s;
+	transition: transform 0.3s, background 0.8s;
 	border-radius: 5px;
 }
 
-.experiences div article .blur {
+.experiences div article .blur, .projects div article .blur {
 	background: rgba(0, 0, 0, 0.6);
 	box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.8);
 	height: 100rem;
@@ -102,7 +102,9 @@ section {
 }
 
 .experiences div article:hover,
-.experiences div article .blur:hover {
+.experiences div article .blur:hover,
+.projects div article:hover,
+.projects div article .blur:hover {
 	transform: scale(1.2);
 }
 
@@ -124,9 +126,11 @@ section {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+	background: rgb(0,0,0);
+	background: linear-gradient(45deg, #bdbdbd 0%, rgba(55,93,108,1) 100%);
 }
 
-.experiences div article:hover .overlay {
+.experiences div article:hover .overlay, .projects div article:hover .overlay {
 	opacity: 1;
 }
 
@@ -196,6 +200,16 @@ a {
 	position: absolute;
 }
 
+.overlay > p{
+
+	background-color: rgba(0, 0, 0, 0.5);
+	height: 100%;
+	width: 100%;
+	vertical-align: middle;
+	padding: 1rem;
+	text-align: center;
+}
+
 /*---Images---*/
 
 img {
@@ -216,6 +230,11 @@ img {
 
 .kamillus {
 	background-image: url(../images/kamillus.jpg);
+}
+
+.Alhambra, .Mars, .Plant, .Prophesea {
+	background: rgb(0,0,0);
+	background: linear-gradient(45deg, rgba(55,93,108,1) 0%, #bdbdbd 100%);
 }
 
 /* ---Timeline css (stolen from someone)--- */

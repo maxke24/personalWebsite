@@ -1,5 +1,5 @@
 {
-    "Experiences": {    
+    "Experiences": {  
         "1": {
             "Class": "kamillus",
             "Location": "Sint-kamillus, Bierbeek",
@@ -19,6 +19,28 @@
             "Class": "bioplanet",
             "Location": "Bioplanet, Korbeek-lo",
             "Description": "This was my first studentjob, I had to fill the shelves and work at the cash register."
+        }
+    },
+    "projects":{
+        "1": {
+            "Class": "Alhambra",
+            "Location": "Alhambra project",
+            "Description": "This was our first programming project, the goal was to replicate the alhambra game board."
+        },
+        "2": {
+            "Class": "Mars",
+            "Location": "Mars project",
+            "Description": "This was our secong big project. The scope of this project was a little bigger, the endgoal wat to make a company that could add to the value of life of mars."
+        },
+        "3": {
+            "Class": "Plant",
+            "Location": "Plant disease project",
+            "Description": "This was my first pure ai project, we had to create a model that could predict the disease of a plant by giving it an image."
+        },
+        "4": {  
+            "Class": "Prophesea",
+            "Location": "Prophesea price lstm project",
+            "Description": "Prophesea was the first time we worked for a real business, we had to work together with a real company to create an lstm model that could predict price fluctuations."
         }
     }
 }
