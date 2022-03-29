@@ -56,6 +56,8 @@ section {
 	justify-content: center;
 	flex-direction: column;
 	scroll-snap-align: center;
+	background: none;
+	box-shadow: none;
 }
 
 section {
@@ -93,12 +95,11 @@ section {
 .experiences div article .blur, .projects div article .blur {
 	background: rgba(0, 0, 0, 0.6);
 	box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.8);
-	height: 100rem;
-	top: 0;
-	left: 0;
-	width: 100rem;
-	position: absolute;
-	z-index: -1;
+	height: 100%;
+	width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .experiences div article:hover,

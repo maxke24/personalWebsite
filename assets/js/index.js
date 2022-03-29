@@ -33,8 +33,8 @@ function init() {
 			const el = experiences[o];
 
 			const art = `<article class="${el.Class}">
-							<div class="blur"></div>
-							<h4>${el.Location}</h4>
+							<div class="blur"><h4>${el.Location}</h4></div>
+							
 							<div class="overlay">
 								<p>${el.Description}</p>
 							</div>
@@ -46,8 +46,8 @@ function init() {
 			const el = projects[o];
 
 			const art = `<article class="${el.Class}">
-							<div class="blur"></div>
-							<h4>${el.Location}</h4>
+							<div class="blur">
+							<h4>${el.Location}</h4></div>
 							<div class="overlay">
 								<p>${el.Description}</p>
 							</div>
