@@ -13,12 +13,12 @@ function init() {
 	document.body.scrollTop = 0;
 	document.documentElement.scrollTop = 0;
 
-	document.querySelector(".scroll").addEventListener("click", (e) => {
-		e.preventDefault();
-		document
-			.querySelector("section")
-			.scrollIntoView({ behavior: "smooth", block: "end" });
-	});
+	// document.querySelector(".scroll").addEventListener("click", (e) => {
+	// 	e.preventDefault();
+	// 	document
+	// 		.querySelector("section")
+	// 		.scrollIntoView({ behavior: "smooth", block: "end" });
+	// });
 
 	const experiencesSection = document.querySelector(".experiences>div");
 	const projectsSection = document.querySelector(".projects>div");

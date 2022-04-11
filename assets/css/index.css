@@ -20,6 +20,16 @@
 	src: url(../fonts/Andika-Regular.ttf);
 }
 
+/* ---Variable definition--- */
+:root {
+	--main-bg-color: #BDBDBD;
+	--text-color: #0B2027;
+	--secondary-bg-color: #351E29;
+	--accent-color: #22e0ff /* #F2FF49 */;
+	--secondary-accent-color: #b38b84;
+  }
+  
+
 /*---Container elements---*/
 
 html {
@@ -41,7 +51,7 @@ body::-webkit-scrollbar {
 }
 
 body {
-	background-color: #bdbdbd;
+	background-color:  var(--main-bg-color);
 	overflow: auto;
 	font-family: Jura;
 }
@@ -61,8 +71,8 @@ section {
 }
 
 section {
-	background-color: #0b2027;
-	box-shadow: inset 0px 0.5px 0px 0px #375d6c;
+	background-color: var(--secondary-bg-color);
+	box-shadow: inset 0px 0.5px 0px 0px var(--secondary-bg-color);
 	justify-content: start;
 }
 
@@ -90,6 +100,9 @@ section {
 	-webkit-transition: transform 0.3s, background 0.8s;
 	transition: transform 0.3s, background 0.8s;
 	border-radius: 5px;
+
+	border: 1px solid var(--secondary-accent-color);
+    border-radius: 0.5rem;
 }
 
 .experiences div article .blur, .projects div article .blur {
@@ -119,8 +132,8 @@ section {
 	width: 100%;
 	opacity: 0;
 	transition: 0.5s ease;
-	background-color: #0b2027;
-	color: #bdbdbd;
+	background-color: var(--secondary-bg-color);
+	color: var(--main-bg-color);
 	box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.8);
 	vertical-align: middle;
 	display: flex;
@@ -128,20 +141,20 @@ section {
 	justify-content: center;
 	flex-direction: column;
 	background: rgb(0,0,0);
-	background: linear-gradient(45deg, #bdbdbd 0%, rgba(55,93,108,1) 100%);
 }
 
 .experiences div article:hover .overlay, .projects div article:hover .overlay {
 	opacity: 1;
+	background: linear-gradient(45deg, var(--main-bg-color) 0%, var(--secondary-bg-color) 100%);
 }
 
 /*---Text---*/
 
 h1 {
-	color: #0b2027;
+	color: var(--secondary-bg-color);
 	font-family: GreatVibes;
 	font-size: 10rem;
-	background: -webkit-linear-gradient(#0b2027, #2a4651ba);
+	background: -webkit-linear-gradient(var(--secondary-bg-color), var(--main-bg-color));
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -154,7 +167,7 @@ h1 {
 
 h2,
 h3 {
-	color: #2a4651;
+	color: var(--text-color);
 	width: 100%;
 	text-align: center;
 	margin: 0 auto;
@@ -164,7 +177,7 @@ h3 {
 
 h3 {
 	font-size: 4rem;
-	color: #bdbdbd;
+	color: var(--main-bg-color);
 }
 
 h4 {
@@ -187,7 +200,7 @@ p {
 
 h4 + p {
 	font-size: 2rem;
-	color: #bdbdbd;
+	color: var(--main-bg-color);
 	width: 100%;
 	margin: auto;
 	text-align: center;
@@ -235,7 +248,7 @@ img {
 
 .Alhambra, .Mars, .Plant, .Prophesea {
 	background: rgb(0,0,0);
-	background: linear-gradient(45deg, rgba(55,93,108,1) 0%, #bdbdbd 100%);
+	background: linear-gradient(45deg, var(--secondary-bg-color) 0%, var(--main-bg-color) 100%);
 }
 
 /* ---Timeline css (stolen from someone)--- */
@@ -248,16 +261,17 @@ img {
 .timeline {
 	width: 80%;
 	height: 1rem;
-	color: white;
+	color: #fff;
 	list-style: none;
 	text-align: justify;
-	margin: 80px auto;
+	margin: auto;
+	top: 25%;
 	background: -webkit-gradient(
 		left top,
 		left bottom,
 		color-stop(0%, rgba(255, 255, 255, 0)),
 		color-stop(45%, rgba(255, 255, 255, 0)),
-		color-stop(51%, rgba(212, 129, 102, 1)),
+		color-stop(51%, var(--accent-color)),
 		color-stop(57%, rgba(255, 255, 255, 0)),
 		color-stop(100%, rgba(255, 255, 255, 0))
 	);
@@ -265,7 +279,7 @@ img {
 		to bottom,
 		rgba(255, 255, 255, 0) 0%,
 		rgba(255, 255, 255, 0) 45%,
-		rgba(212, 129, 102, 1) 51%,
+		var(--accent-color) 51%,
 		rgba(255, 255, 255, 0) 57%,
 		rgba(255, 255, 255, 0) 100%
 	);
@@ -281,11 +295,12 @@ img {
 	display: inline-block;
 	width: 20px;
 	height: 20px;
-	background: #d48166;
+	background: var(--accent-color);
 	text-align: center;
 	line-height: 1.2;
 	position: relative;
 	border-radius: 50%;
+	font-weight: bold;
 }
 
 .timeline li:before {
@@ -294,7 +309,7 @@ img {
 	font-size: 1.3rem;
 	position: absolute;
 	left: 50%;
-	color: rgba(212, 129, 102, 1);
+	color: var(--accent-color);
 	transform: translateX(-50%);
 }
 
@@ -318,9 +333,11 @@ img {
 	bottom: 0;
 	margin-bottom: -10px;
 	transform: translate(-50%, 100%);
+	color: var(--secondary-accent-color);
 }
 .timeline li:nth-child(even):after {
 	top: 0;
 	margin-top: -10px;
 	transform: translate(-50%, -100%);
+	color: var(--secondary-accent-color);
 }
