@@ -22,14 +22,16 @@ function init() {
 
 	const experiencesSection = document.querySelector(".experiences>div");
 	const projectsSection = document.querySelector(".projects>div");
+	const eventsSection = document.querySelector(".events>div");
 
 	fetch("../../experiences.json")
 	.then(response => {
 		return response.json();
 	}).then(output =>{
-		const experiences = output.Experiences
-		const projects = output.projects
-		for(const o in experiences){
+		const experiences = output.Experiences;
+		const projects = output.projects;
+		const events = output.events;
+/* 		for(const o in experiences){
 			const el = experiences[o];
 
 			const art = `<article class="${el.Class}">
@@ -38,22 +40,26 @@ function init() {
 							<div class="overlay">
 								<p>${el.Description}</p>
 							</div>
-						</article>`
-			console.log(el);
+						</article>`;
 			experiencesSection.innerHTML += art;
-		}
-		for(const o in projects){
-			const el = projects[o];
-
-			const art = `<article class="${el.Class}">
-							<div class="blur">
-							<h4>${el.Location}</h4></div>
-							<div class="overlay">
-								<p>${el.Description}</p>
-							</div>
-						</article>`
-			console.log(el);
-			projectsSection.innerHTML += art;
-		}
+		} */
+		fillSection(experiencesSection, experiences);
+		fillSection(projectsSection, projects);
+		fillSection(eventsSection, events);
 	})
+}
+
+function fillSection(section, data){
+	for(const o in data){
+		const el = data[o];
+
+		const art = `<article class="${el.Class}">
+						<div class="blur">
+						<h4>${el.Location}</h4></div>
+						<div class="overlay">
+							<p>${el.Description}</p>
+						</div>
+					</article>`;
+		section.innerHTML += art;
+	}
 }

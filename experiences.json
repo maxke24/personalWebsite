@@ -42,5 +42,27 @@
             "Location": "Prophesea price lstm project",
             "Description": "Prophesea was the first time we worked for a real business, we had to work together with a real company to create an lstm model that could predict price fluctuations."
         }
+    },
+    "events":{
+        "1": {
+            "Class": "Miniemeninstituut",
+            "Location": "Miniemeninstituut, Leuven",
+            "Description": "This was my active event, where I gave an explenation to my old school about my course at howest, it was really fun to do and I think the students really got a lot out of it."
+        },
+        "2": {
+            "Class": "MKAI",
+            "Location": "Ai in 2041",
+            "Description": "This was an event where some people had a discussion about what the future would hold for ai, this event wasn't the most interesting one to be honest and I didn't really learn a lot from this."
+        },
+        "3": {
+            "Class": "mlp",
+            "Location": "De machine learning pipeline",
+            "Description": "This was a really interesting event, they told us more about how machine learning is handled in real life by working with pipelines and what pipelines try to solve. I found this really interesting because at my internship they were using such pipelines and it was really interesting to see how they were setup and why they used them like that."
+        },
+        "4": {  
+            "Class": "lorem ipsum",
+            "Location": "lorem ipsum",
+            "Description": "Ipsum consequat ad pariatur minim dolor sint in minim ad minim mollit laboris do. Aliqua non sunt incididunt ipsum cupidatat proident magna aliqua. Esse commodo proident proident laboris est dolore cillum labore elit eiusmod sunt sunt incididunt. Cillum qui exercitation sit consequat non veniam enim minim nulla proident velit do ut. Reprehenderit exercitation cupidatat officia ullamco adipisicing occaecat incididunt."
+        }
     }
 }

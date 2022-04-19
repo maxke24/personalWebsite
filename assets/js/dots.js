@@ -46,6 +46,7 @@ class Dot extends p5.Vector {
 				target.add(dir);
 			}
 		}
+        print(target)
 		circle(target.x, target.y, 16);
 		if (worldRecord > path.radius) {
 			this.seek(target);
@@ -80,12 +81,7 @@ class Dot extends p5.Vector {
 		stroke(255);
 		strokeWeight(2);
 		fill(255);
-		rectMode(CENTER);
-		push();
-		translate(this.x, this.y);
-		rotate(this.vel.heading());
-		rect(0, 0, 20, 1);
-		pop();
+		circle(this.x, this.y, 16);
 	}
 
 	checkFoodCollision(food) {

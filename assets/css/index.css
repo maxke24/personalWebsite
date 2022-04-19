@@ -58,7 +58,6 @@ body {
 
 main,
 section {
-	vertical-align: middle;
 	width: 100%;
 	height: 100vh;
 	display: flex;
@@ -76,38 +75,34 @@ section {
 	justify-content: start;
 }
 
-.experiences > div, .projects > div{
+.experiences > div, .projects > div, .events > div {
 	display: flex;
 	justify-content: space-around;
 	flex-wrap: wrap;
 }
 
-.experiences div article, .projects div article {
-	width: 35%;
-	height: 25vh;
-	margin: 2rem 0;
+.experiences div article, .projects div article, .events div article {
+    width: 35%;
+    height: 25vh;
+    margin: 2rem 0;
+    display: flex;
+    /* border-radius: 0.5rem; */
 	border-radius: 5px;
 	background-position: center; /* Center the image */
 	background-repeat: no-repeat; /* Do not repeat the image */
 	background-size: cover;
 	backdrop-filter: blur(5px);
 	overflow: hidden;
-	vertical-align: middle;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 	-webkit-transition: transform 0.3s, background 0.8s;
 	transition: transform 0.3s, background 0.8s;
-	border-radius: 5px;
-
-	border: 1px solid var(--secondary-accent-color);
-    border-radius: 0.5rem;
+    box-shadow: 0px 0px 20px 0px #201318;
 }
 
-.experiences div article .blur, .projects div article .blur {
-	background: rgba(0, 0, 0, 0.6);
-	box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.8);
+.experiences div article .blur, .projects div article .blur, .events div article .blur {
 	height: 100%;
 	width: 100%;
     display:flex;
@@ -115,10 +110,17 @@ section {
     justify-content: center;
 }
 
+.experiences div article .blur{
+	background: rgba(0, 0, 0, 0.6);
+	box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.8);
+}
+
 .experiences div article:hover,
 .experiences div article .blur:hover,
 .projects div article:hover,
-.projects div article .blur:hover {
+.projects div article .blur:hover,
+.events div article:hover,
+.events div article .blur:hover {
 	transform: scale(1.2);
 }
 
@@ -134,16 +136,16 @@ section {
 	transition: 0.5s ease;
 	background-color: var(--secondary-bg-color);
 	color: var(--main-bg-color);
-	box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.8);
-	vertical-align: middle;
+	/* box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.8); */
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 	background: rgb(0,0,0);
+	/* border-radius: 0.5rem; */
 }
 
-.experiences div article:hover .overlay, .projects div article:hover .overlay {
+.experiences div article:hover .overlay, .projects div article:hover .overlay, .events div article:hover .overlay {
 	opacity: 1;
 	background: linear-gradient(45deg, var(--main-bg-color) 0%, var(--secondary-bg-color) 100%);
 }
@@ -219,7 +221,6 @@ a {
 	background-color: rgba(0, 0, 0, 0.5);
 	height: 100%;
 	width: 100%;
-	vertical-align: middle;
 	padding: 1rem;
 	text-align: center;
 }
@@ -246,9 +247,16 @@ img {
 	background-image: url(../images/kamillus.jpg);
 }
 
-.Alhambra, .Mars, .Plant, .Prophesea {
+/* .Alhambra, .Mars, .Plant, .Prophesea, .Miniemeninstituut, .MKAI, .mlp {
 	background: rgb(0,0,0);
 	background: linear-gradient(45deg, var(--secondary-bg-color) 0%, var(--main-bg-color) 100%);
+} */
+
+section > div > article {
+	background: rgb(0,0,0);
+	background: linear-gradient(45deg, var(--secondary-bg-color) 0%, var(--main-bg-color) 100%);
+	border: 1px solid var(--secondary-accent-color);
+    border-radius: 0.5rem;
 }
 
 /* ---Timeline css (stolen from someone)--- */
@@ -265,7 +273,6 @@ img {
 	list-style: none;
 	text-align: justify;
 	margin: auto;
-	top: 25%;
 	background: -webkit-gradient(
 		left top,
 		left bottom,
