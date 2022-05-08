@@ -213,6 +213,7 @@ p {
 	margin: auto;
 	width: 90%;
 	font-family: Kameron;
+	text-align: center;
 }
 
 h4 + p {
@@ -281,6 +282,15 @@ section > div > article {
 	background: rgb(0,0,0);
 	background: linear-gradient(45deg, var(--secondary-bg-color) 0%, var(--main-bg-color) 100%);
     border-radius: 0.5rem;
+}
+
+footer{
+	width: 100%;
+    position: fixed;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.8);
+	bottom: 0;
+	padding: 0.5rem;
 }
 
 /* ---Timeline css (stolen from someone)--- */
