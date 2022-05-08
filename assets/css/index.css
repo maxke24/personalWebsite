@@ -374,20 +374,19 @@ section > div > article {
 }
 
   .slider #container{
-	width: 57%;
-    height: 100%;
+	width: 70%;
+    height: 90%;
     background: rgb(255 255 255);
     position: relative;
     border-radius: 0.5rem;
-    margin: auto;
     padding: 1rem;
     box-shadow: 2px 2px 4px 1px black;
-	top: 0;
-
-	animation-name: slide;
-	animation-duration: 9s;
-	animation-timing-function: ease-in-out;
-	animation-iteration-count: infinite;
+    top: 0;
+    animation-name: slide;
+    animation-duration: 9s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    margin: 2% auto;
 }
 
   .slider #container #text {
@@ -398,10 +397,10 @@ section > div > article {
   }
 
   .slider #container #image{
-	width: 50%;
+	width: 35%;
     position: absolute;
-    top: 25%;
-    left: -30%;
+    top: 32.5%;
+    left: -20%;
     border-radius: 5rem;
   }
 
@@ -432,7 +431,7 @@ section > div > article {
 
 .slider{
 	width: 80%;
-    height: 45%;
+    height: 65vh;
     position: relative;
     overflow: hidden;
     top: 0;

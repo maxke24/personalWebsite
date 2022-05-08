@@ -73,7 +73,7 @@
         "4": {  
             "Class": "Proximus",
             "Location": "Proximus hackathon",
-            "Description": "This is my first hackathon, aswell as the first hackathon created by the CUO team at proximus.",
+            "Description": "This is my first hackathon, aswell as the first hackathon created by the CUO team at proximus. It was fun to be part of this experience, our team even managed to get a price. The problem we had to solve was reducing the cost of the rollout of fiber. Our solution was to use computer vision to detect whether there were cables on the houses and what type of soil the ground in front of the houses was. We also created something to calculate the distance between the trenches and the entery point of the house.",
             "Link": "assets/images/innovation.png"
         }
     }
