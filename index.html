@@ -2,6 +2,9 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="description" content="Personal Website">
+		<meta name="keywords" content="HTML, CSS, JavaScript, AI, artifical, intelligence, deeplearning, machine, learning">
+		<meta name="author" content="Jelle Max">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Personal website</title>
@@ -12,11 +15,20 @@
 		<main>
 			<h1>Jelle Max</h1>
 			<h2>AI Engineer | Data Scientist | Data analyst</h2>
-			<a href="#" class="scroll"><img src="assets/images/down-arrow.png" /></a>
+			<a href="#about" name='scrollButton' class="scroll"><img alt="scroll" src="assets/images/down-arrow.png" /></a>
 		</main>
+
+		<section class='about' id='about'>
+			<h3>About me</h3>
+			<article>
+				<img alt='Jelle Max' src='assets/images/me-removebg.png'>
+				<p>Hi, I am Jelle Max, I am a prospective data scientist currently studying at Howest. I am very passionate about AI, but besided that I'm also very passionate about cars and motorcycles. <br><br> I am familliar with a lot of AI algorithms across machine learning, deep learning and reinforcement learning.</p>
+			</article>
+		</section>
+
 		<section class="experiences">
 			<h3>Experiences</h3>
-			<div></div>
+			<div class='slider'></div>
 		</section>
 		<section>
 			<h3>Education</h3>
@@ -39,17 +51,29 @@
 					data-text="Howest AI & Business Professional"
 				></li>
 			</ul>
+
+<!-- #TODO: intro over mezelf + foto + skills 
+			Groot stuk over men stage vertellen
+			stuk over men bachelor proef vertellen 
+			Icoontjes met links naar social media
+			Icoontje als je erover hovert omhoog schuiven plus tekst
+			Foto met transparante achtergrond (van mezelf bij het stuk waar ik over mezelf praat)
+			Hoofdpagina looping gif of letters dynamish laten komen van subtitel
+			boxes animatie border
+			puntj-->
+
 		</section>
 		<section class='projects'>
 			<h3>Projects</h3>
-			<div></div>
+			<div class='slider'></div>
 		</section>
 		<section class='events'>
 			<h3>Events</h3>
-			<div></div>
+			<div class='slider'></div>
 		</section>
+
 	</body>
-	<script src="assets/js/p5.js"></script>
-	<script src="assets/js/dot.js"></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js'></script>
 	<script src="assets/js/index.js"></script>
 </html>

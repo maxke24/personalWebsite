@@ -51,9 +51,13 @@ body::-webkit-scrollbar {
 }
 
 body {
-	background-color:  var(--main-bg-color);
-	overflow: auto;
-	font-family: Jura;
+    background-color: black;
+    overflow: auto;
+    font-family: Jura;
+    background: url(../images/bg.gif) center;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 main,
@@ -65,7 +69,7 @@ section {
 	justify-content: center;
 	flex-direction: column;
 	scroll-snap-align: center;
-	background: none;
+	background: rgba(255, 255, 255, 0.8);
 	box-shadow: none;
 }
 
@@ -86,8 +90,6 @@ section {
     height: 25vh;
     margin: 2rem 0;
     display: flex;
-    /* border-radius: 0.5rem; */
-	border-radius: 5px;
 	background-position: center; /* Center the image */
 	background-repeat: no-repeat; /* Do not repeat the image */
 	background-size: cover;
@@ -148,6 +150,19 @@ section {
 .experiences div article:hover .overlay, .projects div article:hover .overlay, .events div article:hover .overlay {
 	opacity: 1;
 	background: linear-gradient(45deg, var(--main-bg-color) 0%, var(--secondary-bg-color) 100%);
+}
+
+.about article{
+	display: flex;
+    align-content: space-around;
+	width: 65%;
+	margin: auto;
+}
+
+.about article img, .about article p{
+	margin: 5rem;
+	color:white;
+	width: 30%;
 }
 
 /*---Text---*/
@@ -225,10 +240,20 @@ a {
 	text-align: center;
 }
 
+.about article>p{
+	color: white;
+	width: 65%;
+	font-size: 1.8rem;
+}
+
 /*---Images---*/
 
 img {
 	width: 3%;
+}
+
+.about img{
+	border-radius: 0.5rem;
 }
 
 .proximus {
@@ -255,7 +280,6 @@ img {
 section > div > article {
 	background: rgb(0,0,0);
 	background: linear-gradient(45deg, var(--secondary-bg-color) 0%, var(--main-bg-color) 100%);
-	border: 1px solid var(--secondary-accent-color);
     border-radius: 0.5rem;
 }
 
@@ -347,4 +371,154 @@ section > div > article {
 	margin-top: -10px;
 	transform: translate(-50%, -100%);
 	color: var(--secondary-accent-color);
+}
+
+  .slider #container{
+	width: 57%;
+    height: 100%;
+    background: rgb(255 255 255);
+    position: relative;
+    border-radius: 0.5rem;
+    margin: auto;
+    padding: 1rem;
+    box-shadow: 2px 2px 4px 1px black;
+	top: 0;
+
+	animation-name: slide;
+	animation-duration: 9s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+  .slider #container #text {
+    width: 70%;
+    margin: auto;
+    right: 2rem;
+    position: absolute;
+  }
+
+  .slider #container #image{
+	width: 50%;
+    position: absolute;
+    top: 25%;
+    left: -30%;
+    border-radius: 5rem;
+  }
+
+  .slider #container img{
+	width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+    max-height: 19rem;
+    box-shadow: 0 0 12px 1px black;
+}
+
+.slider h4{
+	color: var(--accent-color);
+	font-family: inherit;
+	font-size: 2.5rem;
+}
+
+.slider h4 + p {
+    font-size: 1.3rem;
+    color: black;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding: 1rem;
+    font-weight: bold;
+	font-family: inherit;
+}
+
+.slider{
+	width: 80%;
+    height: 45%;
+    position: relative;
+    overflow: hidden;
+    top: 0;
+    z-index: 1;
+}
+
+#next{
+    /* background: linear-gradient(319deg, var(--accent-color) 0%, white 106%); */
+	background: var(--secondary-accent-color);
+    padding: 1.5rem;
+    border-radius: 10%;
+    width: fit-content;
+    right: 5rem;
+    margin: auto;
+	box-shadow: 0px 3px 15px rgba(0,0,0,0.4);
+	color: white;
+	font-weight: bold;
+	font-size: 1.5rem;
+	font-family: inherit;
+	cursor: pointer;
+}
+
+/* @keyframes slide {
+	0% {
+		top: 0;
+	}
+
+	12.5% {
+		top: 0;
+	}
+
+	33% {
+		top: -100%;
+	}
+
+	49.5%{
+		top: -100%;
+	}
+
+	66% {
+		top: -200%;
+	}
+
+	83%{
+		top: -200%
+	}
+
+	100% {
+		top: 0%;
+	}
+} */
+
+@keyframes slide {
+	0% {
+		top: 0;
+	}
+
+	12.5% {
+		top: 0;
+	}
+
+	25% {
+		top: -100%;
+	}
+
+	37.5%{
+		top: -100%;
+	}
+
+	50% {
+		top: -200%;
+	}
+
+	65.5%{
+		top: -200%
+	}
+
+	75% {
+		top: -300%;
+	}
+
+	87.5%{
+		top: -300%
+	}
+
+	100% {
+		top: 0%;
+	}
 }

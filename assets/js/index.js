@@ -1,24 +1,22 @@
 "use strict";
-const colors = {
-	"Charleston Green": "0b2027",
-	"Pastel Pink": "deb1b1",
-	Skobeloff: "286666",
-	Silver: "c6c6c6",
-	Charcoal: "2a4651",
-};
 
-window.addEventListener("DOMContentLoaded", init);
+window.addEventListener("DOMContentLoaded", init);  
 
 function init() {
 	document.body.scrollTop = 0;
 	document.documentElement.scrollTop = 0;
 
-	// document.querySelector(".scroll").addEventListener("click", (e) => {
-	// 	e.preventDefault();
-	// 	document
-	// 		.querySelector("section")
-	// 		.scrollIntoView({ behavior: "smooth", block: "end" });
-	// });
+	document.querySelectorAll("#next").forEach(btn => btn.addEventListener("click", function(e){
+		e.preventDefault();
+		const top = parseInt(document.querySelector(".slider #container").style.top);
+		if(top){
+			const newTop = top - 100;
+			document.querySelectorAll(".slider #container").forEach(el => el.style.top = `${newTop}%`);
+		}else{
+			document.querySelectorAll(".slider #container").forEach(el => el.style.top = '-100%');
+		}
+		console.log("changed height");
+	}));
 
 	const experiencesSection = document.querySelector(".experiences>div");
 	const projectsSection = document.querySelector(".projects>div");
@@ -31,35 +29,40 @@ function init() {
 		const experiences = output.Experiences;
 		const projects = output.projects;
 		const events = output.events;
-/* 		for(const o in experiences){
-			const el = experiences[o];
-
-			const art = `<article class="${el.Class}">
-							<div class="blur"><h4>${el.Location}</h4></div>
-							
-							<div class="overlay">
-								<p>${el.Description}</p>
-							</div>
-						</article>`;
-			experiencesSection.innerHTML += art;
-		} */
 		fillSection(experiencesSection, experiences);
 		fillSection(projectsSection, projects);
 		fillSection(eventsSection, events);
-	})
+	});
 }
 
 function fillSection(section, data){
 	for(const o in data){
 		const el = data[o];
 
-		const art = `<article class="${el.Class}">
+/* 		const art = `<article class="${el.Class}">
 						<div class="blur">
 						<h4>${el.Location}</h4></div>
 						<div class="overlay">
 							<p>${el.Description}</p>
 						</div>
-					</article>`;
+					</article>`; */
+/* 		const art = `<a href="#" class="control_next">></a>
+		<a href="#" class="control_prev"><</a>
+		<ul>
+		  <li>SLIDE 1</li>
+		</ul> `; */
+
+		const art = `<div id='container' class="${el.Class}">
+						<div id='text'>
+							<h4>${el.Location}</h4>
+						<p>${el.Description}</p>
+					</div>
+					<div id='image'>
+							<img alt='job' src="${el.Link}" />
+					</div>
+					<a id="next">Next</a>
+					</div>`;
+
 		section.innerHTML += art;
 	}
 }
