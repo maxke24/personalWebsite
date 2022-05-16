@@ -180,6 +180,7 @@ h1 {
 	margin: 0 auto;
 	font-weight: 100;
 	padding: 3rem 0;
+	color: pink;
 }
 
 h2,
@@ -190,6 +191,7 @@ h3 {
 	margin: 0 auto;
 	font-size: 2rem;
 	padding: 5rem;
+	color: pink;
 }
 
 h3 {
