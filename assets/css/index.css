@@ -392,11 +392,14 @@ footer{
     padding: 1rem;
     box-shadow: 2px 2px 4px 1px black;
     top: 0;
-    animation-name: slide;
+    animation-name: slide4;
     animation-duration: 9s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     margin: 2% auto;
+}
+.events .slider #container{
+    animation-name: slide5;
 }
 
   .slider #container #text {
@@ -494,7 +497,7 @@ footer{
 	}
 } */
 
-@keyframes slide {
+@keyframes slide4 {
 	0% {
 		top: 0;
 	}
@@ -525,6 +528,52 @@ footer{
 
 	87.5%{
 		top: -300%
+	}
+
+	100% {
+		top: 0%;
+	}
+}
+
+@keyframes slide5 {
+	0% {
+		top: 0;
+	}
+
+	10% {
+		top: 0;
+	}
+
+	20% {
+		top: -100%;
+	}
+
+	30%{
+		top: -100%;
+	}
+
+	40% {
+		top: -200%;
+	}
+
+	50%{
+		top: -200%
+	}
+
+	60% {
+		top: -300%;
+	}
+
+	70%{
+		top: -300%
+	}
+
+	80% {
+		top: -400%;
+	}
+
+	90%{
+		top: -400%
 	}
 
 	100% {
