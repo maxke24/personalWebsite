@@ -83,5 +83,18 @@
             "Link": "assets/images/gent.jpg"
         
         }
+    },
+    "blogs": {
+        "1":{
+            "Class": "website",
+            "Location": "How I created this website.",
+            "Description": "I created this website from the ground up. It had a lot of different iterations over the course of two years. I am planning to use it as a professional website later on. I will keep developing it and updating it as long as I can. It is a very vanilla website. I mean this in a way that I use plain html, javascript and css. I do use a little bit of jquery but except for that, it is all self-written. I might decide to update it to a vue js website later on but my experience with this is still limited."
+        },
+        "2":{
+            "Class": "Bachelor thesis",
+            "Location": "Bachelor thesis Dimensionality reduction",
+            "Description": "During my last year at Howest, I had to write a bachelor thesis. I decided to write my thesis on different dimensionality reduction techniques. It was a challenging topic since I had no experience on the matter. I had a lot of struggles while working on this, but I found it very interesting. You can always see my progress, or result when I'm finished, here:",
+            "Link": "https://studenthowest-my.sharepoint.com/:w:/g/personal/jelle_max_student_howest_be/EanmmwP1nXlInD1swLZwvQ8BPss6RWUaDWe5oVeJUU2YMg?e=YHhYt8"
+        }
     }
 }
