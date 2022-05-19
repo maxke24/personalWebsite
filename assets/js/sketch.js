@@ -137,8 +137,9 @@ function createLayer1(x, layerPurpose, color) {
 	const y = NH * 3 + offset;
 	let imgPath = jsondict[layerPurpose][1].Link;
 	let node = new Node(x, y, color, imgPath);
-	let a = createA('#', '');
+	let a = createA('layerPurpose', '');
 	a.position(x - 15, y - 15);
+	a.addClass('node');
 	nodes.push(node);
 	let circ = {};
 	circ[1] = node;
