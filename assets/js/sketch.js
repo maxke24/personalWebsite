@@ -7,7 +7,7 @@ let offset = 200;
 let nodeDiff = 1.6;
 let activeCircle;
 
-fetch('/newWebsite/assets/experiences.json')
+fetch('/assets/experiences.json')
 	.then((response) => {
 		return response.json();
 	})
