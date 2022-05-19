@@ -62,75 +62,50 @@ function draw() {
 	w = window.innerWidth;
 	h = window.innerHeight;
 	spacing = (w - 300) / 6;
-	const L1 = spacing * 1;
-	const L2 = spacing * 2;
-	const L3 = spacing * 3;
-	const L4 = spacing * 4;
-	const L5 = spacing * 5;
-	const L6 = spacing * 6;
 	stroke('#8D918D');
 	strokeWeight(1);
-	drawLines(5, 1, L2, L1);
-	drawLines(4, 5, L3, L2);
-	drawLines(4, 4, L4, L3);
-	drawLines(5, 4, L5, L4);
-	drawLines(3, 5, L6, L5);
+	drawLinesNew();
+
 	for (let i = 0; i < nodes.length; i++) {
-		anchor = createVector(540, 300);
-
-		diffX = map(mouseX, 0, width, -0.2, 0.2);
-		diffY = map(mouseY, height, 0, 0.3, -0.3);
-		nodes[i].x += diffX;
-		nodes[i].y += diffY;
-
-		let force = p5.Vector.sub(
-			nodes[i],
-			createVector(nodes[i].pos.x, nodes[i].pos.y - 200)
-		);
-		let x = force.mag() - restLength;
-		force.normalize();
-		force.mult(-1 * k * x);
-
-		// F = A
-		velocity.add(force);
-		velocity.add(gravity);
-		nodes[i].add(velocity);
-		velocity.mult(0.99);
-		nodes[i].show();
+		updateNode(nodes[i]);
 	}
 }
 
-function drawLines(nodes, previousNodes, x, previousX) {
-	pNodeDiff = 1.6;
-	pOffset = 200;
-	nodeDiff = 1.6;
-	offset = 200;
-	let nOffset = 0;
-	if (nodes % 2 == 0) {
-		nodeDiff = 1.9;
-		offset = 250;
-	}
-	if (previousNodes % 2 == 0) {
-		pNodeDiff = 1.9;
-		pOffset = 250;
-	}
-	if (nodes === 3) {
-		nodeDiff += 0.8;
-		offset = 200;
-		nOffset = 1;
-	}
-	const LHP = h / pNodeDiff / (previousNodes + 1);
-	const LH = h / nodeDiff / (nodes + 1);
-	for (let i = 1; i <= previousNodes; i++) {
-		for (let j = 1; j <= nodes; j++) {
-			let previousY = LHP * i + pOffset;
-			let y = LH * (j + nOffset) + offset;
-			line(previousX, previousY, x, y);
+function updateNode(node) {
+	anchor = createVector(540, 300);
+	let mapValue = random(0.1, 1);
+	diffX = map(mouseX, 0, width, -mapValue, mapValue);
+	diffY = map(mouseY, height, 0, mapValue, -mapValue);
+	node.x += diffX;
+	node.y += diffY;
+
+	let force = p5.Vector.sub(node, createVector(node.pos.x, node.pos.y - 200));
+	let x = force.mag() - restLength;
+	force.normalize();
+	force.mult(-1 * k * x);
+
+	// F = A
+	velocity.add(force);
+	velocity.add(gravity);
+	node.add(velocity);
+	velocity.mult(0.99);
+	node.show();
+}
+
+function drawLinesNew() {
+	let i = 1;
+	for (let [key, value] of Object.entries(circles)) {
+		if (i < Object.keys(circles).length) {
+			let tempNodes = Object.values(circles)[i];
+			for (let [key1, value1] of Object.entries(value)) {
+				for (let [key2, value2] of Object.entries(tempNodes)) {
+					line(value1.x, value1.y, value2.x, value2.y);
+				}
+			}
 		}
+		i++;
 	}
 }
-
-function drawLinesNew() {}
 
 function createLayer1(x, layerPurpose, color) {
 	nodeDiff = 1.6;
