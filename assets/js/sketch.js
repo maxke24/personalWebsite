@@ -55,6 +55,12 @@ function setupLayers() {
 	createLayer4(L4, 'Projects', '#FFD700');
 	createLayer5(L5, 'Events', '#FFD700');
 	createLayer3(L6, 'Output', '#89CFF0');
+
+	document.querySelectorAll('a').forEach((e) => {
+		e.addEventListener('click', (el) => {
+			el.preventDefault();
+		});
+	});
 }
 
 function draw() {
@@ -137,9 +143,8 @@ function createLayer1(x, layerPurpose, color) {
 	const y = NH * 3 + offset;
 	let imgPath = jsondict[layerPurpose][1].Link;
 	let node = new Node(x, y, color, imgPath);
-	let a = createA('layerPurpose', '');
+	let a = createA(`${layerPurpose}`, '');
 	a.position(x - 15, y - 15);
-	a.addClass('node');
 	nodes.push(node);
 	let circ = {};
 	circ[1] = node;
@@ -161,7 +166,7 @@ function createLayer3(x, layerPurpose, color) {
 		const y = NH * (i + 1) + offset;
 		let imgPath = jsondict[layerPurpose][i].Link;
 		let node = new Node(x, y, color, imgPath);
-		let a = createA('#', '');
+		let a = createA(`${layerPurpose}`, '');
 		a.position(x - 15, y - 15);
 		nodes.push(node);
 		circ[i] = node;
@@ -198,7 +203,7 @@ function createLayer4(x, layerPurpose, color) {
 		const y = NH * i + offset;
 		let imgPath = jsondict[layerPurpose][i].Link;
 		let node = new Node(x, y, color, imgPath);
-		let a = createA('#', '');
+		let a = createA(`${layerPurpose}`, '');
 		a.position(x - 15, y - 15);
 		nodes.push(node);
 		circ[i] = node;
@@ -221,7 +226,7 @@ function createLayer5(x, layerPurpose, color) {
 		const y = NH * i + offset;
 		let imgPath = jsondict[layerPurpose][i].Link;
 		let node = new Node(x, y, color, imgPath);
-		let a = createA('#', '');
+		let a = createA(`${layerPurpose}`, '');
 		a.position(x - 15, y - 15);
 		nodes.push(node);
 		circ[i] = node;
