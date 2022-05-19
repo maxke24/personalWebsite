@@ -7,6 +7,12 @@ let offset = 200;
 let nodeDiff = 1.6;
 let activeCircle;
 
+let anchor;
+let velocity;
+let restLength = 100;
+let k = 0.001;
+let gravity;
+
 fetch('/assets/experiences.json')
 	.then((response) => {
 		return response.json();
@@ -15,14 +21,17 @@ fetch('/assets/experiences.json')
 		jsondict = output;
 		setupLayers();
 	});
+
 function setup() {
 	const canvas = createCanvas(w, h);
 	canvas.style('z-index', '-1');
 	background(53);
-	frameRate(10);
+	frameRate(60);
 	document.querySelector('a').addEventListener('click', (e) => {
 		document.querySelector('article').remove();
 	});
+	velocity = createVector(0, 0);
+	gravity = createVector(0, 0.1);
 }
 
 function setupLayers() {
@@ -39,12 +48,6 @@ function setupLayers() {
 	drawingContext.shadowOffsetY = 2;
 	drawingContext.shadowBlur = 20;
 	drawingContext.shadowColor = 'black';
-	/* 	createLayer(1, L1, 'About', '#89CFF0');
-	createLayer(5, L2, 'Education', '#FFD700');
-	createLayer(4, L3, 'Experiences', '#FFD700');
-	createLayer(4, L4, 'Projects', '#FFD700');
-	createLayer(5, L5, 'Events', '#FFD700');
-	createLayer(3, L6, 'Output', '#89CFF0'); */
 
 	createLayer1(L1, 'About', '#89CFF0');
 	createLayer5(L2, 'Education', '#FFD700');
@@ -73,6 +76,26 @@ function draw() {
 	drawLines(5, 4, L5, L4);
 	drawLines(3, 5, L6, L5);
 	for (let i = 0; i < nodes.length; i++) {
+		anchor = createVector(540, 300);
+
+		diffX = map(mouseX, 0, width, -0.2, 0.2);
+		diffY = map(mouseY, height, 0, 0.3, -0.3);
+		nodes[i].x += diffX;
+		nodes[i].y += diffY;
+
+		let force = p5.Vector.sub(
+			nodes[i],
+			createVector(nodes[i].pos.x, nodes[i].pos.y - 200)
+		);
+		let x = force.mag() - restLength;
+		force.normalize();
+		force.mult(-1 * k * x);
+
+		// F = A
+		velocity.add(force);
+		velocity.add(gravity);
+		nodes[i].add(velocity);
+		velocity.mult(0.99);
 		nodes[i].show();
 	}
 }
@@ -106,6 +129,8 @@ function drawLines(nodes, previousNodes, x, previousX) {
 		}
 	}
 }
+
+function drawLinesNew() {}
 
 function createLayer1(x, layerPurpose, color) {
 	nodeDiff = 1.6;

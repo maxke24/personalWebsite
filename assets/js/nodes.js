@@ -8,9 +8,7 @@ class Node extends p5.Vector {
 		this.link = link;
 		this.image;
 		this.activeColor;
-		/* if(link){
-            this.image = createImg(link, "color");
-        } */
+		this.pos = createVector(x, y);
 	}
 
 	show() {
