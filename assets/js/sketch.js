@@ -9,8 +9,8 @@ let activeCircle;
 
 let anchor;
 let velocity;
-let restLength = 100;
-let k = 0.001;
+let restLength = 200;
+let k = 0.1;
 let gravity;
 
 fetch('/assets/experiences.json')
@@ -72,24 +72,43 @@ function draw() {
 }
 
 function updateNode(node) {
-	anchor = createVector(540, 300);
-	let mapValue = random(0.1, 1);
-	diffX = map(mouseX, 0, width, -mapValue, mapValue);
-	diffY = map(mouseY, height, 0, mapValue, -mapValue);
-	node.x += diffX;
-	node.y += diffY;
-
-	let force = p5.Vector.sub(node, createVector(node.pos.x, node.pos.y - 200));
-	let x = force.mag() - restLength;
-	force.normalize();
-	force.mult(-1 * k * x);
-
-	// F = A
-	velocity.add(force);
-	velocity.add(gravity);
-	node.add(velocity);
-	velocity.mult(0.99);
 	node.show();
+}
+
+function mouseMoved() {
+	if (!document.querySelector('article')) {
+		for (let i = 0; i < nodes.length; i++) {
+			const node = nodes[i];
+			if (dist(mouseX, mouseY, node.x, node.y) < 50) {
+				anchor = createVector(540, 300);
+				let mapValue = random(0.1, 1);
+				diffX = map(mouseX, node.x - 50, node.x + 50, -mapValue, mapValue);
+				diffY = map(
+					mouseY,
+					node.y - 50,
+					node.y + 50,
+					-mapValue * 2,
+					mapValue * 2
+				);
+				// node.x += diffX;
+				node.y += diffY;
+
+				let force = p5.Vector.sub(
+					node,
+					createVector(node.pos.x, node.pos.y - 200)
+				);
+				let x = force.mag() - restLength;
+				force.normalize();
+				force.mult(-1 * k * x);
+
+				// F = A
+				velocity.add(force);
+				velocity.add(gravity);
+				node.add(velocity);
+				velocity.mult(0.99);
+			}
+		}
+	}
 }
 
 function drawLinesNew() {
