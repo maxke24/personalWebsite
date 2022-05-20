@@ -42,25 +42,35 @@ canvas {
 	left: 0;
 }
 
+div {
+	position: absolute;
+}
+
 div,
 article {
 	transition: scale 2s;
 	color: #fff;
-	background-color: rgba(0, 0, 0, 0.9);
-	position: relative;
+	background: rgba(0, 0, 0, 0.9);
 	padding: 1rem;
 	border-radius: 1rem;
-	width: 15%;
-	border: 0.001rem solid #89cff0;
+	width: 35%;
+	background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9))
+			padding-box,
+		linear-gradient(to top right, #89cff0, #ffffff, #89cff0) border-box;
+	border: 0.1px solid transparent;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
 article {
+	position: relative;
 	width: 40%;
-	z-index: 5;
-	display: flex;
+	z-index: 1;
 	justify-content: end;
 	align-items: flex-end;
-	flex-direction: column;
+	margin: 1rem;
 }
 /*---Text---*/
 h1 {
@@ -75,7 +85,7 @@ h1 {
 h2 {
 	color: #ffd700;
 	margin: 0;
-	font-size: 1rem;
+	font-size: 2.5rem;
 	font-weight: 100;
 }
 
@@ -86,7 +96,6 @@ h2 {
 
 .scaled > p {
 	color: #8d918d;
-	font-size: 0.8rem;
 }
 
 p {
@@ -118,31 +127,49 @@ a {
 	border-radius: 50%;
 }
 
-article > a {
-	border: 1px solid #89cff0;
+h2 + p + a {
+	border-radius: 1rem;
+	padding: 1rem;
+	justify-self: flex-end;
+	align-self: end;
+
+	background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9))
+			padding-box,
+		linear-gradient(to right, #89cff0, #ffd700) border-box;
+	border: 0.1px solid transparent;
+}
+
+article > a,
+div > a {
 	padding: 1rem;
 	border-radius: 1rem;
 	cursor: pointer;
 	display: block;
 	width: max-content;
 	height: initial;
+	background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9))
+			padding-box,
+		linear-gradient(to right, #89cff0, #ffd700) border-box;
+	border: 0.1px solid transparent;
 }
 
 @keyframes example {
 	0% {
-		transform: scale(1);
+		transform: scale(0.01);
 	}
 	100% {
-		transform: scale(2.5);
+		transform: scale(1) translate(-50%, -50%);
+		left: 50%;
+		top: 50%;
 	}
 }
 
 .scaled {
-	animation: example 2s forwards;
+	animation: example 1s forwards;
 }
 
 img {
-	width: 10vw;
+	width: 8vw;
 	left: 2rem;
 	position: fixed;
 	border-radius: 100%;

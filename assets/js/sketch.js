@@ -37,13 +37,14 @@ function setup() {
 function setupLayers() {
 	w = window.innerWidth;
 	h = window.innerHeight;
-	spacing = (w - 300) / 6;
+	spacing = (w - 300) / 7;
 	const L1 = spacing * 1;
 	const L2 = spacing * 2;
 	const L3 = spacing * 3;
 	const L4 = spacing * 4;
 	const L5 = spacing * 5;
 	const L6 = spacing * 6;
+	const L7 = spacing * 7;
 	drawingContext.shadowOffsetX = 5;
 	drawingContext.shadowOffsetY = 2;
 	drawingContext.shadowBlur = 20;
@@ -54,9 +55,10 @@ function setupLayers() {
 	createLayer4(L3, 'Experiences', '#FFD700');
 	createLayer4(L4, 'Projects', '#FFD700');
 	createLayer5(L5, 'Events', '#FFD700');
-	createLayer3(L6, 'Output', '#89CFF0');
+	createLayer2(L6, 'Extras', '#FFD700');
+	createLayer3(L7, 'Output', '#89CFF0');
 
-	document.querySelectorAll('a').forEach((e) => {
+	document.querySelectorAll('a:not(#socials)').forEach((e) => {
 		e.addEventListener('click', (el) => {
 			el.preventDefault();
 		});
@@ -148,6 +150,29 @@ function createLayer1(x, layerPurpose, color) {
 	nodes.push(node);
 	let circ = {};
 	circ[1] = node;
+	circles[layerPurpose] = circ;
+}
+
+function createLayer2(x, layerPurpose, color) {
+	nodeDiff = 1.6;
+	offset = 250;
+
+	const NH = h / nodeDiff / 6;
+
+	let p = createP(layerPurpose);
+	p.position(x - p.width / 2, NH * 2 + offset - 65);
+	p.addClass('yellow');
+
+	let circ = {};
+	for (let i = 1; i <= 2; i++) {
+		const y = NH * (i + 1) + offset;
+		let imgPath = jsondict[layerPurpose][i].Link;
+		let node = new Node(x, y, color, imgPath);
+		let a = createA(`${layerPurpose}`, '');
+		a.position(x - 15, y - 15);
+		nodes.push(node);
+		circ[i] = node;
+	}
 	circles[layerPurpose] = circ;
 }
 
@@ -245,12 +270,14 @@ function mousePressed() {
 				dist(mouseX, mouseY, value2.x, value2.y) < 25 &&
 				!document.querySelector('article')
 			) {
-				value2.activeColor = '#0CF574';
 				value2.activeColor = '#64b6ac';
 				const body = jsondict[key][key2];
-				const el = `<h2>${body.Title}</h2><p>${body.Description}</p>`;
-				createDiv(el);
+				const el = `<h2>${body.Title}</h2><p>${body.Description}</p><a>Close</a>`;
+				let tmpdiv = createDiv(el);
 				const div = document.querySelector('div');
+				div.style.left = `${value2.x - tmpdiv.width / 2}px`;
+				div.style.top = `${value2.y - tmpdiv.height / 2}px`;
+				div.style.position = `absolute`;
 				div.classList.add('scaled');
 			}
 		}

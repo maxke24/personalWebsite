@@ -2,55 +2,55 @@
 	"About": {
 		"1": {
 			"Title": "About me",
-			"Description": "Hi, I am Jelle Max, I am a prospective data scientist currently studying at Howest. I am very passionate about AI, but besided that I'm also very passionate about cars and motorcycles. I am familliar with a lot of AI algorithms across machine learning, deep learning and reinforcement learning."
+			"Description": "Hi, I am Jelle Max, a prospective data scientist currently studying at Howest. I am very passionate about AI, but in my free time I also love everything about cars and motorcycles. I am familiar with a lot of AI algorithms across machine learning, deep learning and reinforcement learning."
 		}
 	},
 	"Education": {
 		"1": {
 			"Title": "HDC Latin",
-			"Date": "September 2012 - Juni 2013",
-			"Description": "During this one year in latin, I found out that language isn't really my strong suit. I did love to language, but I wasn't good at it."
+			"Date": "September 2012 - June 2013",
+			"Description": "During this one year in latin, I found out that language isn't really my strong suite. I did love the language, but I wasn't good at it."
 		},
 		"2": {
 			"Title": "HDC Economy",
-			"Date": "September 2013 - Juni 2014",
-			"Description": "After my experience with latin, I decided to switch to economics. I was better suited for this, but it was still nog a perfect match."
+			"Date": "September 2013 - June 2014",
+			"Description": "After my experience with latin, I decided to switch to economics. I was better suited for this, but it was still not a perfect match."
 		},
 		"3": {
-			"Title": "Minimeninstituut Commerce",
-			"Date": "September 2015 - Juni 2017",
-			"Description": "After my 2 years at HDC, I switched to minimeninstituut. The primary reason for this was because I wanted to do something with informatics. Commerce was the perfect stepping stone to my next track, being IT management."
+			"Title": "Miniemeninstituut Commerce",
+			"Date": "September 2015 - June 2017",
+			"Description": "After my 2 years at HDC, I switched to Miniemeninstituut. The primary reason for this, was because I wanted to do something with informatics. Commerce was the perfect stepping stone to my next track, being IT management."
 		},
 		"4": {
-			"Title": "Minimeninstituut IT management",
-			"Date": "September 2017 - Juni 2019",
-			"Description": "During these two years, I learned a lot about informatics. I really loved it and had a lot of fun. The teachers were excellent and helped me find a suitable further career. I also got to experience an intership abroad thanks to my teachers."
+			"Title": "Miniemeninstituut IT management",
+			"Date": "September 2017 - June 2019",
+			"Description": "During these two years, I learned a lot about informatics. I really loved it and had a lot of fun. The teachers were excellent and helped me find a suitable further career. I also got to experience an internship abroad thanks to my teachers."
 		},
 		"5": {
 			"Title": "Howest AI & Business Professional",
-			"Date": "September 2019 - Juni 2022",
+			"Date": "September 2019 - June 2022",
 			"Description": "After my studies at miniemeninstituut, I decided to go to Howest. I wanted to go to this school because it was said to be one of the hardest. I first entered thinking I would pursuit cyber security, but ended up choosing Artificial Intelligence & Business Professional as a specialization."
 		}
 	},
 	"Experiences": {
 		"1": {
 			"Title": "Sint-kamillus, Bierbeek",
-			"Description": "During this job, my main job was doing callcenter for the internal personel of Sint-Kamillus. The second part of my job consisted of doing maintenance on some applications and updating printer and camera passwords.",
+			"Description": "During this job, my main task was doing the call centre for internal personnel of Sint-Kamillus. The second part of my job consisted of doing maintenance on some applications and updating printer and camera passwords.",
 			"Link": "assets/images/kamillus.jpg"
 		},
 		"2": {
-			"Title": "Proximus, Brussel",
-			"Description": "After having a studentjob as a programmer, my manager gave me the opportunity to join the datascientist team for my internship. During this internship I helped with reworking old projects.",
+			"Title": "Proximus, Brussels",
+			"Description": "After having a student job as a programmer, my manager gave me the opportunity to join the data scientist team for my internship. During this internship I helped with reworking an old project and helping with the data cleaning process.",
 			"Link": "assets/images/proximus.jpg"
 		},
 		"3": {
 			"Title": "Stag lodge stables, London",
-			"Description": "During this internship, I created an administrative application and a website. The purpose of this, was to automise the appointment system.",
+			"Description": "During this internship, I created an administrative application and a website. The purpose of this, was to automate the appointment system.",
 			"Link": "assets/images/stag.jpg"
 		},
 		"4": {
 			"Title": "Bioplanet, Korbeek-lo",
-			"Description": "This was my first studentjob, I had to fill the shelves and work at the cash register.",
+			"Description": "This was my first student job, I had to fill the shelves and work at the cash register.",
 			"Link": "assets/images/bioplanet.jpg"
 		}
 	},
@@ -62,7 +62,7 @@
 		},
 		"2": {
 			"Title": "Mars project",
-			"Description": "This was our second big project. The scope of this project was a little bigger, the endgoal wat to make a company that could add to the value of life of mars.",
+			"Description": "This was our second big project. The scope of this project was a little bigger, the end goal was to make a company that could add to the value of life of mars.",
 			"Link": "assets/images/kamillus.jpg"
 		},
 		"3": {
@@ -79,7 +79,7 @@
 	"Events": {
 		"1": {
 			"Title": "Miniemeninstituut, Leuven",
-			"Description": "This was my active event, where I gave an explenation to my old school about my course at howest, it was really fun to do and I think the students really got a lot out of it.",
+			"Description": "This was my active event, where I gave an explanation to my old school about my course at howest, it was really fun to do and I think the students really got a lot out of it.",
 			"Link": "assets/images/miniemen.jpg"
 		},
 		"2": {
@@ -94,22 +94,31 @@
 		},
 		"4": {
 			"Title": "Proximus hackathon",
-			"Description": "This is my first hackathon, aswell as the first hackathon created by the CUO team at proximus. It was fun to be part of this experience, our team even managed to get a price. The problem we had to solve was reducing the cost of the rollout of fiber. Our solution was to use computer vision to detect whether there were cables on the houses and what type of soil the ground in front of the houses was. We also created something to calculate the distance between the trenches and the entery point of the house.",
+			"Description": "This is my first hackathon, as well as the first hackathon created by the CUO team at proximus. It was fun to be part of this experience, our team even managed to get a price. The problem we had to solve was reducing the cost of the rollout of fiber. Our solution was to use computer vision to detect whether there were cables on the houses and what type of soil the ground in front of the houses was. We also created something to calculate the distance between the trenches and the entry point of the house.",
 			"Link": "assets/images/innovation.png"
 		},
 		"5": {
-			"Title": "Afstudeerbeurs icc gent",
+			"Title": "Graduation fair icc gent",
 			"Description": "This graduation fair in Gent. This was a really interesting event. There were a lot of different companies with a lot of different offers. I liked it a lot because you met a lot of different people and they were all really interested but almost none of them had a job offering for bachelor degree AI students, which was a real shame. I think not a lot of companies know of our bachelor which is not so good if we want to find a relevant job offer.",
 			"Link": "assets/images/gent.jpg"
 		}
 	},
 
 	"Output": {
-		"1": { "Title": "Datascientist", "Description": "" },
-		"2": { "Title": "Data analyst", "Description": "" },
-		"3": { "Title": "Data engineer", "Description": "" }
+		"1": {
+			"Title": "Data scientist",
+			"Description": "Data science is what I love the most. I love working with AI models, refining them and pursuing the 'optimal' model."
+		},
+		"2": {
+			"Title": "Data analyst",
+			"Description": "Data analyst is a little bit less up my ally, but still something I enjoy doing from time to time."
+		},
+		"3": {
+			"Title": "Data engineer",
+			"Description": "Data engineering is something I am not that interested in, nor that good in. I prefer to stay away from tasks that require a good amount of data engineering."
+		}
 	},
-	"Blogs": {
+	"Extras": {
 		"1": {
 			"Title": "How I created this website.",
 			"Description": "I created this website from the ground up. It had a lot of different iterations over the course of two years. I am planning to use it as a professional website later on. I will keep developing it and updating it as long as I can. It is a very vanilla website. I mean this in a way that I use plain html, javascript and css. I do use a little bit of jquery but except for that, it is all self-written. I might decide to update it to a vue js website later on but my experience with this is still limited."
