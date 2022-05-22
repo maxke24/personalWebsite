@@ -10,7 +10,7 @@ let activeCircle;
 let anchor;
 let velocity;
 let restLength = 200;
-let k = 0.01;
+let k = 0.1;
 let gravity;
 
 fetch('/assets/experiences.json')
@@ -86,7 +86,13 @@ function updateNode(node) {
 			if (dist(mouseX, mouseY, node.x, node.y) < 25) {
 				anchor = createVector(540, 300);
 				let mapValue = random(0.5, 2);
-				diffX = map(mouseX, node.x - 25, node.x + 25, -mapValue, mapValue);
+				diffX = map(
+					mouseX,
+					node.x - 25,
+					node.x + 25,
+					-mapValue * 5,
+					mapValue * 5
+				);
 				diffY = map(
 					mouseY,
 					node.y - 25,
@@ -94,7 +100,7 @@ function updateNode(node) {
 					-mapValue * 5,
 					mapValue * 5
 				);
-				// node.x += diffX;
+				node.x += diffX;
 				node.y += diffY;
 			}
 			let force = p5.Vector.sub(
