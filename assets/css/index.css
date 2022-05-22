@@ -122,9 +122,9 @@ article > p {
 
 a {
 	cursor: pointer;
-	width: 30px;
-	height: 30px;
-	border-radius: 50%;
+	/* width: 30px; */
+	/* height: 30px; */
+	/* border-radius: 50%; */
 }
 
 h2 + p + a {
@@ -151,6 +151,16 @@ div > a {
 			padding-box,
 		linear-gradient(to right, #89cff0, #ffd700) border-box;
 	border: 0.1px solid transparent;
+}
+
+p > .link {
+	width: auto;
+	height: auto;
+	margin: auto;
+	padding: auto;
+	border: none;
+	color: inherit;
+	text-decoration: underline dotted;
 }
 
 @keyframes example {
@@ -198,4 +208,5 @@ footer {
 	align-content: center;
 	justify-content: center;
 	width: 100%;
+	padding-bottom: 0.5rem;
 }

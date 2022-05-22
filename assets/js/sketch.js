@@ -10,7 +10,7 @@ let activeCircle;
 let anchor;
 let velocity;
 let restLength = 200;
-let k = 0.1;
+let k = 0.01;
 let gravity;
 
 fetch('/assets/experiences.json')
@@ -30,7 +30,6 @@ function setup() {
 	document.querySelector('a').addEventListener('click', (e) => {
 		document.querySelector('article').remove();
 	});
-	velocity = createVector(0, 0);
 	gravity = createVector(0, 0.1);
 }
 
@@ -55,7 +54,7 @@ function setupLayers() {
 	createLayer4(L3, 'Experiences', '#FFD700');
 	createLayer4(L4, 'Projects', '#FFD700');
 	createLayer5(L5, 'Events', '#FFD700');
-	createLayer2(L6, 'Extras', '#FFD700');
+	createLayer4(L6, 'Extras', '#FFD700');
 	createLayer3(L7, 'Output', '#89CFF0');
 
 	document.querySelectorAll('a:not(#socials)').forEach((e) => {
@@ -80,44 +79,43 @@ function draw() {
 }
 
 function updateNode(node) {
-	node.show();
-}
-
-function mouseMoved() {
 	if (!document.querySelector('article')) {
 		for (let i = 0; i < nodes.length; i++) {
+			velocity = createVector(0, 0);
 			const node = nodes[i];
-			if (dist(mouseX, mouseY, node.x, node.y) < 50) {
+			if (dist(mouseX, mouseY, node.x, node.y) < 25) {
 				anchor = createVector(540, 300);
-				let mapValue = random(0.1, 1);
-				diffX = map(mouseX, node.x - 50, node.x + 50, -mapValue, mapValue);
+				let mapValue = random(0.5, 2);
+				diffX = map(mouseX, node.x - 25, node.x + 25, -mapValue, mapValue);
 				diffY = map(
 					mouseY,
-					node.y - 50,
-					node.y + 50,
-					-mapValue * 2,
-					mapValue * 2
+					node.y - 25,
+					node.y + 25,
+					-mapValue * 5,
+					mapValue * 5
 				);
 				// node.x += diffX;
 				node.y += diffY;
-
-				let force = p5.Vector.sub(
-					node,
-					createVector(node.pos.x, node.pos.y - 200)
-				);
-				let x = force.mag() - restLength;
-				force.normalize();
-				force.mult(-1 * k * x);
-
-				// F = A
-				velocity.add(force);
-				velocity.add(gravity);
-				node.add(velocity);
-				velocity.mult(0.99);
 			}
+			let force = p5.Vector.sub(
+				node,
+				createVector(node.pos.x, node.pos.y - 200)
+			);
+			let x = force.mag() - restLength;
+			force.normalize();
+			force.mult(-1 * k * x);
+
+			// F = A
+			velocity.add(force);
+			velocity.add(gravity);
+			node.add(velocity);
+			velocity.mult(0.99);
 		}
 	}
+	node.show();
 }
+
+function mouseMoved() {}
 
 function drawLinesNew() {
 	let i = 1;
@@ -272,14 +270,21 @@ function mousePressed() {
 			) {
 				value2.activeColor = '#64b6ac';
 				const body = jsondict[key][key2];
-				const el = `<h2>${body.Title}</h2><p>${body.Description}</p><a>Close</a>`;
-				let tmpdiv = createDiv(el);
-				const div = document.querySelector('div');
-				div.style.left = `${value2.x - tmpdiv.width / 2}px`;
-				div.style.top = `${value2.y - tmpdiv.height / 2}px`;
-				div.style.position = `absolute`;
-				div.classList.add('scaled');
+				addBody(body, value2.x, value2.y);
 			}
 		}
 	}
+}
+
+function addBody(body, x, y) {
+	let el = `<h2>${body.Title}</h2><p>${body.Description}</p><a>Close</a>`;
+	if (body.Link) {
+		el = `<h2>${body.Title}</h2><p>${body.Description} <a class='link' href="${body.Link}">Click here!</a></p><a>Close</a>`;
+	}
+	let tmpdiv = createDiv(el);
+	const div = document.querySelector('div');
+	div.style.left = `${x - tmpdiv.width / 2}px`;
+	div.style.top = `${y - tmpdiv.height / 2}px`;
+	div.style.position = `absolute`;
+	div.classList.add('scaled');
 }
