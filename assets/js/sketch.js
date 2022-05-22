@@ -57,11 +57,11 @@ function setupLayers() {
 	createLayer4(L6, 'Extras', '#FFD700');
 	createLayer3(L7, 'Output', '#89CFF0');
 
-	document.querySelectorAll('a:not(#socials)').forEach((e) => {
-		e.addEventListener('click', (el) => {
-			el.preventDefault();
-		});
-	});
+	// document.querySelectorAll('a:not(#socials):not(.link)').forEach((e) => {
+	// 	e.addEventListener('click', (el) => {
+	// 		el.preventDefault();
+	// 	});
+	// });
 }
 
 function draw() {
@@ -264,19 +264,18 @@ function createLayer5(x, layerPurpose, color) {
 }
 
 function mousePressed() {
-	document.querySelectorAll('.scaled').forEach((el) => {
-		el.remove();
-	});
-	for (let [key, value] of Object.entries(circles)) {
-		for (let [key2, value2] of Object.entries(value)) {
-			value2.activeColor = '';
-			if (
-				dist(mouseX, mouseY, value2.x, value2.y) < 25 &&
-				!document.querySelector('article')
-			) {
-				value2.activeColor = '#64b6ac';
-				const body = jsondict[key][key2];
-				addBody(body, value2.x, value2.y);
+	if (!document.querySelector('.scaled')) {
+		for (let [key, value] of Object.entries(circles)) {
+			for (let [key2, value2] of Object.entries(value)) {
+				value2.activeColor = '';
+				if (
+					dist(mouseX, mouseY, value2.x, value2.y) < 25 &&
+					!document.querySelector('article')
+				) {
+					value2.activeColor = '#64b6ac';
+					const body = jsondict[key][key2];
+					addBody(body, value2.x, value2.y);
+				}
 			}
 		}
 	}
@@ -285,7 +284,7 @@ function mousePressed() {
 function addBody(body, x, y) {
 	let el = `<h2>${body.Title}</h2><p>${body.Description}</p><a>Close</a>`;
 	if (body.Link) {
-		el = `<h2>${body.Title}</h2><p>${body.Description} <a class='link' href="${body.Link}">Click here!</a></p><a>Close</a>`;
+		el = `<h2>${body.Title}</h2><p>${body.Description} <a target="_blank" id='socials' rel=”noopener” class='link' href="${body.Link}">Click here!</a></p><a class='close'>Close</a>`;
 	}
 	let tmpdiv = createDiv(el);
 	const div = document.querySelector('div');
@@ -293,4 +292,9 @@ function addBody(body, x, y) {
 	div.style.top = `${y - tmpdiv.height / 2}px`;
 	div.style.position = `absolute`;
 	div.classList.add('scaled');
+	div.childNodes[2].addEventListener('click', () => {
+		document.querySelectorAll('.scaled').forEach((el) => {
+			el.remove();
+		});
+	});
 }

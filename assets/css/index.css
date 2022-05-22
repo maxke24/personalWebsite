@@ -158,7 +158,7 @@ p > .link {
 	height: auto;
 	margin: auto;
 	padding: auto;
-	border: none;
+	z-index: 5;border: none;
 	color: inherit;
 	text-decoration: underline dotted;
 }
