@@ -203,7 +203,7 @@ function createLayer3(x, layerPurpose, color) {
 	circles[layerPurpose] = circ;
 	let y = NH * 2 + offset - p.height / 2;
 	let xPos = w - p.width * 3.6;
-	p = createP('80% Datascientist');
+	p = createP('80% Data scientist');
 	p.position(xPos, y);
 
 	y = NH * 3 + offset - p.height / 2;
