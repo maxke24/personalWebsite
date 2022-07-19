@@ -3,30 +3,39 @@ let h = window.innerHeight;
 let circles = {};
 let jsondict;
 const nodes = [];
-let offset = 200;
-let nodeDiff = 1.6;
 let activeCircle;
 
 let anchor;
 let velocity;
-let restLength = 200;
+let restLength = 10;
 let k = 0.1;
 let gravity;
+let max = 0;
+let dots = [];
 
-fetch('/assets/experiences.json')
-	.then((response) => {
-		return response.json();
-	})
-	.then((output) => {
-		jsondict = output;
-		setupLayers();
-	});
+const colors = { blue: '#89cff0', yellow: '#ffd700' };
+
+function preload() {
+	fetch('/assets/experiences_new.json')
+		.then((response) => {
+			return response.json();
+		})
+		.then((output) => {
+			jsondict = output;
+			Object.keys(jsondict).forEach((key) => {
+				if (Object.keys(jsondict[key]).length > max) {
+					max = Object.keys(jsondict[key]).length;
+				}
+			});
+			setupLayers();
+		});
+}
 
 function setup() {
 	const canvas = createCanvas(w, h);
 	canvas.style('z-index', '-1');
-	background(53);
-	frameRate(60);
+	background(22);
+	frameRate(240);
 	document.querySelector('a').addEventListener('click', (e) => {
 		document.querySelector('article').remove();
 	});
@@ -36,40 +45,25 @@ function setup() {
 function setupLayers() {
 	w = window.innerWidth;
 	h = window.innerHeight;
-	spacing = (w - 300) / 7;
-	const L1 = spacing * 1;
-	const L2 = spacing * 2;
-	const L3 = spacing * 3;
-	const L4 = spacing * 4;
-	const L5 = spacing * 5;
-	const L6 = spacing * 6;
-	const L7 = spacing * 7;
-	drawingContext.shadowOffsetX = 5;
-	drawingContext.shadowOffsetY = 2;
-	drawingContext.shadowBlur = 20;
-	drawingContext.shadowColor = 'black';
-
-	createLayer1(L1, 'About', '#89CFF0');
-	createLayer5(L2, 'Education', '#FFD700');
-	createLayer4(L3, 'Experiences', '#FFD700');
-	createLayer4(L4, 'Projects', '#FFD700');
-	createLayer5(L5, 'Events', '#FFD700');
-	createLayer4(L6, 'Extras', '#FFD700');
-	createLayer3(L7, 'Output', '#89CFF0');
-
-	// document.querySelectorAll('a:not(#socials):not(.link)').forEach((e) => {
-	// 	e.addEventListener('click', (el) => {
-	// 		el.preventDefault();
-	// 	});
-	// });
+	spacing = w / 1.5 / max;
+	drawingContext.shadowOffsetX = 3;
+	drawingContext.shadowOffsetY = 1;
+	drawingContext.shadowBlur = 5;
+	drawingContext.shadowColor = '#16161616';
+	let i = 1;
+	Object.keys(jsondict).forEach((key) => {
+		const layerSpacing = spacing * i;
+		createLayer(layerSpacing, key);
+		i += 1;
+	});
 }
 
 function draw() {
-	background(53);
+	background(22);
 	w = window.innerWidth;
 	h = window.innerHeight;
 	spacing = (w - 300) / 6;
-	stroke('#8D918D');
+	stroke('#535353');
 	strokeWeight(1);
 	drawLinesNew();
 
@@ -105,7 +99,7 @@ function updateNode(node) {
 			}
 			let force = p5.Vector.sub(
 				node,
-				createVector(node.pos.x, node.pos.y - 200)
+				createVector(node.pos.x, node.pos.y - restLength)
 			);
 			let x = force.mag() - restLength;
 			force.normalize();
@@ -120,8 +114,6 @@ function updateNode(node) {
 	}
 	node.show();
 }
-
-function mouseMoved() {}
 
 function drawLinesNew() {
 	let i = 1;
@@ -138,123 +130,34 @@ function drawLinesNew() {
 	}
 }
 
-function createLayer1(x, layerPurpose, color) {
-	nodeDiff = 1.6;
-	offset = 200;
+function createLayer(x, layerPurpose) {
+	const l = Object.keys(jsondict[layerPurpose]).length;
+	let half = (l + 1) / 2;
+	let offset = 70;
+	let py = h / 2 - offset * abs(half - 1) - 70;
+	let color;
+	const currentIndex = Object.keys(jsondict).indexOf(layerPurpose);
+	const lastIndex = Object.keys(jsondict).length - 1;
+	currentIndex === 0 || currentIndex === lastIndex
+		? (color = 'blue')
+		: (color = 'yellow');
 
-	const NH = h / nodeDiff / 6;
+	// const color = '#89CFF0';
 	let p = createP(layerPurpose);
-	p.position(x - p.width / 2, NH * 3 + offset - 65);
-	p.addClass('blue');
-	const y = NH * 3 + offset;
-	let imgPath = jsondict[layerPurpose][1].Link;
-	let node = new Node(x, y, color, imgPath);
-	let a = createA(`${layerPurpose}`, '');
-	a.position(x - 15, y - 15);
-	nodes.push(node);
+	p.position(x - p.width / 2, py);
+	p.addClass(color);
 	let circ = {};
-	circ[1] = node;
-	circles[layerPurpose] = circ;
-}
-
-function createLayer2(x, layerPurpose, color) {
-	nodeDiff = 1.6;
-	offset = 250;
-
-	const NH = h / nodeDiff / 6;
-
-	let p = createP(layerPurpose);
-	p.position(x - p.width / 2, NH * 2 + offset - 65);
-	p.addClass('yellow');
-
-	let circ = {};
-	for (let i = 1; i <= 2; i++) {
-		const y = NH * (i + 1) + offset;
+	let y;
+	for (let i = 1; i <= l; i++) {
+		if (i == half) {
+			y = h / 2;
+		} else if (i < half) {
+			y = h / 2 - offset * abs(half - i);
+		} else {
+			y = h / 2 + offset * abs(half - i);
+		}
 		let imgPath = jsondict[layerPurpose][i].Link;
-		let node = new Node(x, y, color, imgPath);
-		let a = createA(`${layerPurpose}`, '');
-		a.position(x - 15, y - 15);
-		nodes.push(node);
-		circ[i] = node;
-	}
-	circles[layerPurpose] = circ;
-}
-
-function createLayer3(x, layerPurpose, color) {
-	nodeDiff = 1.6;
-	offset = 200;
-
-	const NH = h / nodeDiff / 6;
-
-	let p = createP(layerPurpose);
-	p.position(x - p.width / 2, NH * 2 + offset - 65);
-	p.addClass('blue');
-
-	let circ = {};
-	for (let i = 1; i <= 3; i++) {
-		const y = NH * (i + 1) + offset;
-		let imgPath = jsondict[layerPurpose][i].Link;
-		let node = new Node(x, y, color, imgPath);
-		let a = createA(`${layerPurpose}`, '');
-		a.position(x - 15, y - 15);
-		nodes.push(node);
-		circ[i] = node;
-	}
-	circles[layerPurpose] = circ;
-	let y = NH * 2 + offset - p.height / 2;
-	let xPos = w - p.width * 3.6;
-	p = createP('80% Data scientist');
-	p.position(xPos, y);
-
-	y = NH * 3 + offset - p.height / 2;
-	xPos = w - p.width * 1.4;
-	p = createP('15% Data analyst');
-	p.position(xPos, y);
-
-	y = NH * 4 + offset - p.height / 2;
-	xPos = w - p.width * 1.45;
-	p = createP('5% Data engineer');
-	p.position(xPos, y);
-}
-
-function createLayer4(x, layerPurpose, color) {
-	nodeDiff = 1.9;
-	offset = 250;
-
-	const NH = h / nodeDiff / 5;
-
-	let p = createP(layerPurpose);
-	p.position(x - p.width / 2, NH + offset - 65);
-	p.addClass('yellow');
-
-	let circ = {};
-	for (let i = 1; i <= 4; i++) {
-		const y = NH * i + offset;
-		let imgPath = jsondict[layerPurpose][i].Link;
-		let node = new Node(x, y, color, imgPath);
-		let a = createA(`${layerPurpose}`, '');
-		a.position(x - 15, y - 15);
-		nodes.push(node);
-		circ[i] = node;
-	}
-	circles[layerPurpose] = circ;
-}
-
-function createLayer5(x, layerPurpose, color) {
-	nodeDiff = 1.6;
-	offset = 200;
-
-	const NH = h / nodeDiff / 6;
-
-	let p = createP(layerPurpose);
-	p.position(x - p.width / 2, NH + offset - 65);
-	p.addClass('yellow');
-
-	let circ = {};
-	for (let i = 1; i <= 5; i++) {
-		const y = NH * i + offset;
-		let imgPath = jsondict[layerPurpose][i].Link;
-		let node = new Node(x, y, color, imgPath);
+		let node = new Node(x, y, colors[color], imgPath);
 		let a = createA(`${layerPurpose}`, '');
 		a.position(x - 15, y - 15);
 		nodes.push(node);
@@ -286,10 +189,13 @@ function addBody(body, x, y) {
 	if (body.Link) {
 		el = `<h2>${body.Title}</h2><p>${body.Description} <a target="_blank" id='socials' rel=”noopener” class='link' href="${body.Link}">Click here!</a></p><a class='close'>Close</a>`;
 	}
-	let tmpdiv = createDiv(el);
+	/* if (body.Image) {
+		el = `<h2>${body.Title}</h2><p>${body.Description}</p><a class='close'>Close</a><img src="${body.Image}"/> `;
+	} */
+	let tempdiv = createDiv(el);
 	const div = document.querySelector('div');
-	div.style.left = `${x - tmpdiv.width / 2}px`;
-	div.style.top = `${y - tmpdiv.height / 2}px`;
+	div.style.left = `${x - tempdiv.width / 2}px`;
+	div.style.top = `${y - tempdiv.height / 2}px`;
 	div.style.position = `absolute`;
 	div.classList.add('scaled');
 	div.childNodes[2].addEventListener('click', () => {
@@ -297,4 +203,39 @@ function addBody(body, x, y) {
 			el.remove();
 		});
 	});
+}
+
+function drawBackground() {
+	// drawHexagons();
+}
+function hexagon(transX, transY, s) {
+	strokeWeight(5);
+	// fill(colors['yellow']);
+	noFill();
+	push();
+	translate(transX, transY);
+	scale(s);
+	beginShape();
+	vertex(-75, -130);
+	vertex(75, -130);
+	vertex(150, 0);
+	vertex(75, 130);
+	vertex(-75, 130);
+	vertex(-150, 0);
+	endShape(CLOSE);
+	pop();
+}
+
+function drawHexagons() {
+	for (let i = 0; i <= width; i += 30) {
+		for (let j = 15; j <= height; j += 26) {
+			let alpha1 = round(map(i, 0, width, 4, 1));
+			let alpha2 = round(map(j, 15, height, 4, 1));
+			stroke(`${colors['blue']}${alpha1}${alpha2}`);
+			// Draw hexagon for every width and height
+			const x = i;
+			const y = j;
+			hexagon(x, y, 0.1);
+		}
+	}
 }

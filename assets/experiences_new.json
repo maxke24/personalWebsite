@@ -1,0 +1,97 @@
+{
+	"About": {
+		"1": {
+			"Title": "About me",
+			"Description": "Hi, I am Jelle Max, a prospective data scientist currently studying at Howest. I am very passionate about AI, but in my free time I also love everything about cars and motorcycles. I am familiar with a lot of AI algorithms across machine learning, deep learning and reinforcement learning.",
+			"Image": "/assets/images/me-removebg.png"
+		}
+	},
+	"Education": {
+		"1": {
+			"Title": "HDC Latin",
+			"Date": "September 2012 - June 2013",
+			"Description": "During this one year in latin, I found out that language isn't really my strong suite. I did love the language, but I wasn't good at it."
+		},
+		"2": {
+			"Title": "HDC Economy",
+			"Date": "September 2013 - June 2014",
+			"Description": "After my experience with latin, I decided to switch to economics. I was better suited for this, but it was still not a perfect match."
+		},
+		"3": {
+			"Title": "Miniemeninstituut Commerce",
+			"Date": "September 2015 - June 2017",
+			"Description": "After my 2 years at HDC, I switched to Miniemeninstituut. The primary reason for this, was because I wanted to do something with informatics. Commerce was the perfect stepping stone to my next track, being IT management."
+		},
+		"4": {
+			"Title": "Miniemeninstituut IT management",
+			"Date": "September 2017 - June 2019",
+			"Description": "During these two years, I learned a lot about informatics. I really loved it and had a lot of fun. The teachers were excellent and helped me find a suitable further career. I also got to experience an internship abroad thanks to my teachers."
+		},
+		"5": {
+			"Title": "Howest AI & Business Professional",
+			"Date": "September 2019 - June 2022",
+			"Description": "After my studies at miniemeninstituut, I decided to go to Howest. I wanted to go to this school because it was said to be one of the hardest. I first entered thinking I would pursuit cyber security, but ended up choosing Artificial Intelligence & Business Professional as a specialization."
+		}
+	},
+	"Experiences": {
+		"1": {
+			"Title": "Sint-kamillus, Bierbeek",
+			"Description": "During this job, my main task was doing the call centre for internal personnel of Sint-Kamillus. The second part of my job consisted of doing maintenance on some applications and updating printer and camera passwords.",
+			"Image": "assets/images/kamillus.jpg"
+		},
+		"2": {
+			"Title": "Proximus, Brussels",
+			"Description": "After having a student job as a programmer, my manager gave me the opportunity to join the data scientist team for my internship. During this internship I helped with reworking an old project and helping with the data cleaning process.",
+			"Image": "assets/images/proximus.jpg"
+		},
+		"3": {
+			"Title": "Stag lodge stables, London",
+			"Description": "During this internship, I created an administrative application and a website. The purpose of this, was to automate the appointment system.",
+			"Image": "assets/images/stag.jpg"
+		},
+		"4": {
+			"Title": "Bioplanet, Korbeek-lo",
+			"Description": "This was my first student job, I had to fill the shelves and work at the cash register.",
+			"Image": "assets/images/bioplanet.jpg"
+		}
+	},
+	"School projects": {
+		"1": {
+			"Title": "Plant disease project",
+			"Description": "This was my first pure ai project, we had to create a model that could predict the disease of a plant by giving it an image.",
+			"Image": "assets/images/kamillus.jpg"
+		},
+		"2": {
+			"Title": "Prophesea price lstm project",
+			"Description": "Prophesea was the first time we worked for a real business, we had to work together with a real company to create an lstm model that could predict price fluctuations.",
+			"Image": "assets/images/prophesea.jpg"
+		}
+	},
+	"Extras": {
+		"1": {
+			"Title": "Bachelor thesis Dimensionality reduction",
+			"Description": "During my last year at Howest, I had to write a bachelor thesis. I decided to write my thesis on different dimensionality reduction techniques. It was a challenging topic since I had no experience on the matter. I had a lot of struggles while working on this, but I found it very interesting. You can always see my progress, or result when I'm finished, here:",
+			"Link": "https://studenthowest-my.sharepoint.com/:w:/g/personal/jelle_max_student_howest_be/EanmmwP1nXlInD1swLZwvQ8BPss6RWUaDWe5oVeJUU2YMg?e=YHhYt8"
+		},
+		"2": {
+			"Title": "Curriculum Vitae",
+			"Description": "Are you already convinced? Please do check out my cv then (english version coming soon)!: ",
+			"Link": "https://docs.google.com/document/d/1vNPrh6XOjtBUABHaJdGgTBd2Zmklc_X41r_Iq1UdOTM/edit#heading=h.aagfqklm9zwt"
+		}
+	},
+
+	"Output": {
+		"1": {
+			"Title": "Data scientist",
+			"Description": "Data science is what I love the most. I love working with AI models, refining them and pursuing the 'optimal' model."
+		},
+		"2": {
+			"Title": "Data analyst",
+			"Description": "Data analyst is a little bit less up my ally, but still something I enjoy doing from time to time."
+		},
+		"3": {
+			"Title": "Data engineer",
+			"Description": "Data engineering is something I am not that interested in, nor that good in. I prefer to stay away from tasks that require a good amount of data engineering."
+		}
+	}
+}

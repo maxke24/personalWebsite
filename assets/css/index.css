@@ -31,7 +31,7 @@ body {
 	overflow: hidden;
 	margin: 0;
 
-	-user-select: none;
+	user-select: none;
 	-webkit-user-select: none; /* Chrome all / Safari all */
 	-moz-user-select: none; /* Firefox all */
 	-ms-user-select: none; /* IE 10+ */
@@ -158,7 +158,8 @@ p > .link {
 	height: auto;
 	margin: auto;
 	padding: auto;
-	z-index: 5;border: none;
+	z-index: 5;
+	border: none;
 	color: inherit;
 	text-decoration: underline dotted;
 }
@@ -209,4 +210,16 @@ footer {
 	justify-content: center;
 	width: 100%;
 	padding-bottom: 0.5rem;
+}
+
+.catPaw {
+	position: fixed;
+	top: -7rem;
+	left: -7rem;
+	padding: 0;
+	margin: 0;
+	filter: invert(20%);
+	transform: rotate(-27deg);
+	width: initial;
+	height: initial;
 }
