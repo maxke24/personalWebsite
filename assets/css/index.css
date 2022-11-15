@@ -214,12 +214,12 @@ footer {
 
 .catPaw {
 	position: fixed;
-	top: -7rem;
-	left: -7rem;
+	top: -4rem;
+	left: -12rem;
 	padding: 0;
 	margin: 0;
 	filter: invert(20%);
 	transform: rotate(-27deg);
-	width: initial;
-	height: initial;
+	width: 25%;
+	height: 25%;
 }
