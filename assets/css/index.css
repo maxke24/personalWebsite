@@ -147,10 +147,10 @@ div > a {
 	display: block;
 	width: max-content;
 	height: initial;
-	background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9))
+	/* background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9))
 			padding-box,
-		linear-gradient(to right, #89cff0, #ffd700) border-box;
-	border: 0.1px solid transparent;
+		linear-gradient(to right, #89cff0, #ffd700) border-box; */
+	border: 1px solid #ffd700;
 }
 
 p > .link {
@@ -194,6 +194,13 @@ footer img {
 	/* filter: opacity(0.5) drop-shadow(0 0 0 #53c1f5); */
 }
 
+#socials img{
+	border: 1px solid #ffd700;
+}
+
+#socials #insta, #socials #lightroom{
+	border: 1px solid #89cff0;
+}
 footer > a {
 	width: auto;
 	height: auto;
