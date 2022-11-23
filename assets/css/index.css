@@ -62,6 +62,10 @@ article {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	background: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(4px);
+	border: 1px solid #89cff0;
+	box-shadow: #000000 2px 2px 5px 2px;
 }
 
 article {
@@ -71,6 +75,10 @@ article {
 	justify-content: end;
 	align-items: flex-end;
 	margin: 1rem;
+	background: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(4px);
+	border: 1px solid #89cff0;
+	box-shadow: #000000 2px 2px 5px 2px;
 }
 /*---Text---*/
 h1 {
@@ -192,6 +200,7 @@ footer img {
 	margin: 0 0.5rem;
 	left: 0;
 	/* filter: opacity(0.5) drop-shadow(0 0 0 #53c1f5); */
+	background: white;
 }
 
 #socials img{
