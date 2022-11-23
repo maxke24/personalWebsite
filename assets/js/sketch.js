@@ -96,6 +96,13 @@ function updateNode(node) {
 				);
 				node.x += diffX;
 				node.y += diffY;
+				if(node.r <= 55){
+					node.r += 0.05;
+				}
+			}else{
+				if(node.r >= 50){
+					node.r -= 0.05;
+				}
 			}
 			let force = p5.Vector.sub(
 				node,
@@ -157,9 +164,11 @@ function createLayer(x, layerPurpose) {
 			y = h / 2 + offset * abs(half - i);
 		}
 		let imgPath = jsondict[layerPurpose][i].Link;
-		let node = new Node(x, y, colors[color], imgPath);
 		let a = createA(`${layerPurpose}`, '');
-		a.position(x - 15, y - 15);
+		a.position(x - 25, y - 25);
+		/* a.style("width", "50px");
+		a.style("height", "50px"); */
+		let node = new Node(x, y, colors[color], imgPath, a);
 		nodes.push(node);
 		circ[i] = node;
 	}

@@ -130,9 +130,9 @@ article > p {
 
 a {
 	cursor: pointer;
-	/* width: 30px; */
-	/* height: 30px; */
-	/* border-radius: 50%; */
+	border-radius: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(2px);
 }
 
 h2 + p + a {
@@ -214,6 +214,16 @@ footer > a {
 	width: auto;
 	height: auto;
 	border-radius: initial;
+}
+
+#socials{
+	transition: all 0.2s;
+	background: none;
+	backdrop-filter: none;
+}
+
+#socials:hover{
+	transform: scale(1.2);
 }
 
 footer {
