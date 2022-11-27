@@ -1,7 +1,7 @@
 'use strict';
 
 class Node extends p5.Vector {
-	constructor(x, y, color, link) {
+	constructor(x, y, color, link, a) {
 		super(x, y);
 		this.color = color;
 		this.r = 50;
@@ -9,6 +9,9 @@ class Node extends p5.Vector {
 		this.image;
 		this.activeColor;
 		this.pos = createVector(x, y);
+		this.a = a;
+
+		console.log(this.a)
 	}
 
 	show() {
@@ -18,6 +21,8 @@ class Node extends p5.Vector {
 		}
 		strokeWeight(1);
 		fill(22);
+		this.a.position(this.x - 25, this.y - 25);
 		circle(this.x, this.y, this.r);
+
 	}
 }
