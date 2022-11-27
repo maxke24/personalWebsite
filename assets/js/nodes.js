@@ -10,8 +10,6 @@ class Node extends p5.Vector {
 		this.activeColor;
 		this.pos = createVector(x, y);
 		this.a = a;
-
-		console.log(this.a)
 	}
 
 	show() {

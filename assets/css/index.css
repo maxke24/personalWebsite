@@ -36,27 +36,38 @@ body {
 	-moz-user-select: none; /* Firefox all */
 	-ms-user-select: none; /* IE 10+ */
 }
+
+main{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	font-family: Jura;
+	font-weight: 100;
+	width: 100%;
+	overflow: hidden;
+	margin: 0;
+}
+
 canvas {
 	position: fixed;
 	top: 0;
 	left: 0;
 }
 
-div {
+.scaled {
 	position: absolute;
 }
 
-div,
-article {
+.scaled,
+main article {
 	transition: scale 2s;
-	color: #fff;
-	background: rgba(0, 0, 0, 0.9);
+	color: var(--white);
+	background: var(--transparent_black);
 	padding: 1rem;
 	border-radius: 1rem;
 	width: 35%;
-	background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9))
-			padding-box,
-		linear-gradient(to top right, #89cff0, #ffffff, #89cff0) border-box;
+	background: var(--gradient);
 	border: 0.1px solid transparent;
 	display: flex;
 	justify-content: center;
@@ -64,11 +75,11 @@ article {
 	flex-direction: column;
 	background: rgba(0, 0, 0, 0.5);
 	backdrop-filter: blur(4px);
-	border: 1px solid #89cff0;
-	box-shadow: #000000 2px 2px 5px 2px;
+	border: 1px solid var(--blue);
+	box-shadow: var(--black) 2px 2px 5px 2px;
 }
 
-article {
+main article {
 	position: relative;
 	width: 40%;
 	z-index: 1;
@@ -77,12 +88,12 @@ article {
 	margin: 1rem;
 	background: rgba(0, 0, 0, 0.5);
 	backdrop-filter: blur(4px);
-	border: 1px solid #89cff0;
-	box-shadow: #000000 2px 2px 5px 2px;
+	border: 1px solid var(--blue);
+	box-shadow: var(--black) 2px 2px 5px 2px;
 }
 /*---Text---*/
-h1 {
-	color: #8d918d;
+main h1 {
+	color: var(--grey);
 	position: fixed;
 	top: 0;
 	font-size: 8rem;
@@ -90,8 +101,8 @@ h1 {
 	font-weight: 100;
 }
 
-h2 {
-	color: #ffd700;
+main h2 {
+	color: var(--yellow);
 	margin: 0;
 	font-size: 2.5rem;
 	font-weight: 100;
@@ -103,32 +114,32 @@ h2 {
 }
 
 .scaled > p {
-	color: #8d918d;
+	color: var(--grey);
 }
 
-p {
-	color: #8d918d;
+main p {
+	color: var(--grey);
 	font-size: 1.4rem;
 	font-weight: 100;
 	margin: 0;
 }
 
-article > p {
+main article > p {
 	font-size: 2rem;
 	text-align: justify;
 }
 
 .yellow {
-	color: #ffd700;
+	color: var(--yellow);
 	font-size: 1.6rem;
 }
 
 .blue {
-	color: #89cff0;
+	color: var(--blue);
 	font-size: 1.6rem;
 }
 
-a {
+main a {
 	cursor: pointer;
 	border-radius: 100%;
 	background: rgba(0, 0, 0, 0.5);
@@ -141,24 +152,19 @@ h2 + p + a {
 	justify-self: flex-end;
 	align-self: end;
 
-	background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9))
-			padding-box,
-		linear-gradient(to right, #89cff0, #ffd700) border-box;
+	background: var(--gradient);
 	border: 0.1px solid transparent;
 }
 
-article > a,
-div > a {
+main article > a,
+.scaled > a {
 	padding: 1rem;
 	border-radius: 1rem;
 	cursor: pointer;
 	display: block;
 	width: max-content;
 	height: initial;
-	/* background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9))
-			padding-box,
-		linear-gradient(to right, #89cff0, #ffd700) border-box; */
-	border: 1px solid #ffd700;
+	border: 1px solid var(--yellow);
 }
 
 p > .link {
@@ -170,6 +176,15 @@ p > .link {
 	border: none;
 	color: inherit;
 	text-decoration: underline dotted;
+}
+
+span{
+	color: var(--blue);
+	text-align: justify;
+	margin: 0;
+	left: 0px;
+	align-self: flex-start;
+	padding: 1rem 0;
 }
 
 @keyframes example {
@@ -199,16 +214,15 @@ footer img {
 	position: relative;
 	margin: 0 0.5rem;
 	left: 0;
-	/* filter: opacity(0.5) drop-shadow(0 0 0 #53c1f5); */
 	background: white;
 }
 
 #socials img{
-	border: 1px solid #ffd700;
+	border: 1px solid var(--yellow);
 }
 
 #socials #insta, #socials #lightroom{
-	border: 1px solid #89cff0;
+	border: 1px solid var(--blue);
 }
 footer > a {
 	width: auto;

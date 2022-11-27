@@ -201,13 +201,15 @@ function addBody(body, x, y) {
 	/* if (body.Image) {
 		el = `<h2>${body.Title}</h2><p>${body.Description}</p><a class='close'>Close</a><img src="${body.Image}"/> `;
 	} */
-	let tempdiv = createDiv(el);
-	const div = document.querySelector('div');
-	div.style.left = `${x - tempdiv.width / 2}px`;
-	div.style.top = `${y - tempdiv.height / 2}px`;
+	const div = createDiv(el);
+	
+	div.elt.className = 'scaled';
+	/* const div = document.querySelector('div'); */
+	div.style.left = `${x - div.width / 2}px`;
+	div.style.top = `${y - div.height / 2}px`;
 	div.style.position = `absolute`;
-	div.classList.add('scaled');
-	div.childNodes[2].addEventListener('click', () => {
+	/* div.classList.add('scaled'); */
+	div.elt.childNodes[2].addEventListener('click', () => {
 		document.querySelectorAll('.scaled').forEach((el) => {
 			el.remove();
 		});
