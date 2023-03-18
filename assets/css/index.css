@@ -61,7 +61,7 @@ canvas {
 
 .scaled,
 main article {
-	transition: scale 2s;
+	/* transition: scale 2s; */
 	color: var(--white);
 	background: var(--transparent_black);
 	padding: 1rem;
@@ -192,9 +192,7 @@ span{
 		transform: scale(0.01);
 	}
 	100% {
-		transform: scale(1) translate(-50%, -50%);
-		left: 50%;
-		top: 50%;
+		transform: scale(1);
 	}
 }
 

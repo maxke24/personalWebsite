@@ -43,8 +43,6 @@ function setup() {
 }
 
 function setupLayers() {
-	w = window.innerWidth;
-	h = window.innerHeight;
 	spacing = w / 1.5 / max;
 	drawingContext.shadowOffsetX = 3;
 	drawingContext.shadowOffsetY = 1;
@@ -60,8 +58,6 @@ function setupLayers() {
 
 function draw() {
 	background(22);
-	w = window.innerWidth;
-	h = window.innerHeight;
 	spacing = (w - 300) / 6;
 	stroke('#535353');
 	strokeWeight(1);
@@ -198,55 +194,17 @@ function addBody(body, x, y) {
 	if (body.Link) {
 		el = `<h2>${body.Title}</h2><p>${body.Description} <a target="_blank" id='socials' rel=”noopener” class='link' href="${body.Link}">Click here!</a></p><a class='close'>Close</a>`;
 	}
-	/* if (body.Image) {
-		el = `<h2>${body.Title}</h2><p>${body.Description}</p><a class='close'>Close</a><img src="${body.Image}"/> `;
-	} */
 	const div = createDiv(el);
 	
-	div.elt.className = 'scaled';
+	/* div.elt.className = 'scaled'; */
 	/* const div = document.querySelector('div'); */
 	div.style.left = `${x - div.width / 2}px`;
 	div.style.top = `${y - div.height / 2}px`;
-	div.style.position = `absolute`;
-	/* div.classList.add('scaled'); */
+	/* div.style.position = `absolute`; */
+	div.elt.classList.add('scaled');
 	div.elt.childNodes[2].addEventListener('click', () => {
 		document.querySelectorAll('.scaled').forEach((el) => {
 			el.remove();
 		});
 	});
-}
-
-function drawBackground() {
-	// drawHexagons();
-}
-function hexagon(transX, transY, s) {
-	strokeWeight(5);
-	// fill(colors['yellow']);
-	noFill();
-	push();
-	translate(transX, transY);
-	scale(s);
-	beginShape();
-	vertex(-75, -130);
-	vertex(75, -130);
-	vertex(150, 0);
-	vertex(75, 130);
-	vertex(-75, 130);
-	vertex(-150, 0);
-	endShape(CLOSE);
-	pop();
-}
-
-function drawHexagons() {
-	for (let i = 0; i <= width; i += 30) {
-		for (let j = 15; j <= height; j += 26) {
-			let alpha1 = round(map(i, 0, width, 4, 1));
-			let alpha2 = round(map(j, 15, height, 4, 1));
-			stroke(`${colors['blue']}${alpha1}${alpha2}`);
-			// Draw hexagon for every width and height
-			const x = i;
-			const y = j;
-			hexagon(x, y, 0.1);
-		}
-	}
 }
