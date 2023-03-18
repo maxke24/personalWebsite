@@ -3,8 +3,10 @@
 	--blue: #89cff0;
 	--black: #000000;
 	--yellow: #ffd700;
-	--grey: #8d918d;
-	--transparant_black: rgba(0, 0, 0, 0.9);
-	--gradient: linear-gradient(var(--transparant_black), var(--transparant_black)) padding-box, linear-gradient(to right, var(--blue), var(--yellow)) border-box;
-
+	--yellow: #d4af37;
+	--yellow_transparent :rgba(212, 175, 55, 0.3);
+	--grey: #aaaaaa;
+	--transparant_black: rgba(0, 0, 0, 0.5);
+	--gradient: linear-gradient(var(
+	--transparant_black), var(--transparant_black)) padding-box, linear-gradient(to right, var(--blue), var(--yellow)) border-box;
 }

@@ -106,6 +106,7 @@ main h2 {
 	margin: 0;
 	font-size: 2.5rem;
 	font-weight: 100;
+	padding-bottom: 1rem;
 }
 
 .blue:first-of-type {
@@ -115,17 +116,23 @@ main h2 {
 
 .scaled > p {
 	color: var(--grey);
+	font-size: 1.6rem;
+}
+
+.scaled > h2{
+	padding-bottom: 1rem;
+	font-size: 2rem;
 }
 
 main p {
 	color: var(--grey);
-	font-size: 1.4rem;
+	font-size: 2rem;
 	font-weight: 100;
 	margin: 0;
 }
 
 main article > p {
-	font-size: 2rem;
+	font-size: 4rem;
 	text-align: justify;
 }
 
@@ -152,7 +159,7 @@ h2 + p + a {
 	justify-self: flex-end;
 	align-self: end;
 
-	background: var(--gradient);
+	background: var(--yellow_transparent);
 	border: 0.1px solid transparent;
 }
 
@@ -164,6 +171,7 @@ main article > a,
 	display: block;
 	width: max-content;
 	height: initial;
+	margin-top: 1rem;
 	border: 1px solid var(--yellow);
 }
 
