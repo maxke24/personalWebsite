@@ -132,18 +132,20 @@ main p {
 }
 
 main article > p {
-	font-size: 4rem;
+	font-size: 2rem;
 	text-align: justify;
 }
 
 .yellow {
 	color: var(--yellow);
 	font-size: 1.6rem;
+	font-weight: 600;
 }
 
 .blue {
 	color: var(--blue);
 	font-size: 1.6rem;
+	font-weight: 600;
 }
 
 main a {

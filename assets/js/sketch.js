@@ -10,8 +10,11 @@ let velocity;
 let restLength = 10;
 let k = 0.1;
 let gravity;
-let max = 0;
+let max = 1;
 let dots = [];
+/* let walkerx, walkery;
+
+let points = [] */
 
 const colors = { blue: '#89cff0', yellow: '#ffd700' };
 
@@ -62,7 +65,6 @@ function draw() {
 	stroke('#535353');
 	strokeWeight(1);
 	drawLinesNew();
-
 	for (let i = 0; i < nodes.length; i++) {
 		updateNode(nodes[i]);
 	}
@@ -136,18 +138,16 @@ function drawLinesNew() {
 function createLayer(x, layerPurpose) {
 	const l = Object.keys(jsondict[layerPurpose]).length;
 	let half = (l + 1) / 2;
-	let offset = 70;
-	let py = h / 2 - offset * abs(half - 1) - 70;
+	let offset = 100;
+	let py = h / 2 - offset * abs(half - 1) - 75;
 	let color;
 	const currentIndex = Object.keys(jsondict).indexOf(layerPurpose);
 	const lastIndex = Object.keys(jsondict).length - 1;
 	currentIndex === 0 || currentIndex === lastIndex
 		? (color = 'blue')
 		: (color = 'yellow');
-
-	// const color = '#89CFF0';
 	let p = createP(layerPurpose);
-	p.position(x - p.width / 2, py);
+	p.position(x - p.width / 1.1, py);
 	p.addClass(color);
 	let circ = {};
 	let y;
@@ -162,8 +162,6 @@ function createLayer(x, layerPurpose) {
 		let imgPath = jsondict[layerPurpose][i].Link;
 		let a = createA(`${layerPurpose}`, '');
 		a.position(x - 25, y - 25);
-		/* a.style("width", "50px");
-		a.style("height", "50px"); */
 		let node = new Node(x, y, colors[color], imgPath, a);
 		nodes.push(node);
 		circ[i] = node;
@@ -208,3 +206,31 @@ function addBody(body, x, y) {
 		});
 	});
 }
+
+
+
+/* function randomWalker() {
+	for(let i = 0; i < points.length; i++){
+
+		let x = points[i].x
+		let y = points[i].y
+		point(x, y);
+		const r = floor(random(4));
+		switch (r) {
+			case 0:
+				x = x + 1;
+				break;
+				case 1:
+					x = x - 1;
+					break;
+					case 2:
+						y = y + 1;
+						break;
+						case 3:
+							y = y - 1;
+							break;
+						}
+						walkerx = x
+						walkery = y
+					}
+  } */
