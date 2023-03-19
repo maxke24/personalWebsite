@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Karma');
+@import url('https://fonts.googleapis.com/css2?family=Overpass');
+
+/*---Fonts---*/
+@font-face {
+	font-family: GreatVibes;
+	src: url(../fonts/GreatVibes-Regular.ttf);
+}
+
+@font-face {
+	font-family: Kameron;
+	src: url(../../assets/fonts/Kameron-Regular.ttf);
+}
+
+@font-face {
+	font-family: Jura;
+	src: url(../../assets/fonts/Jura-VariableFont_wght.ttf);
+}
+
+@font-face {
+	font-family: Andika;
+	src: url(../../assets/fonts/Andika-Regular.ttf);
+}
+
+/*---Containers---*/
+body {
+	display: flex;
+	align-items: start;
+	justify-content: start;
+	font-family: Nunito;
+	font-weight: 100;
+	width: 100%;
+	margin: 0;
+	flex-direction: column;
+	user-select: none;
+	overflow-x: hidden;
+	-webkit-user-select: none; /* Chrome all / Safari all */
+	-moz-user-select: none; /* Firefox all */
+	-ms-user-select: none; /* IE 10+ */
+	overflow-x: hidden;
+	background-color: #222;
+}
+
+/*---Text---*/
+h1{
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+h1, h2{
+    color: var(--yellow);
+    padding: 1rem 2rem;
+    position: relative;
+}
+
+h2{
+    color: var(--blue);
+    padding: 0rem 2rem;
+    font-size: 2rem;
+    font-family: Karma;
+    font-weight: 500;
+}
+
+h3{
+    font-size: 1.7rem;
+    padding: 0.2rem 0rem;
+    font-family: Karma;
+}
+
+p{
+    font-size: 1.5rem;
+    font-weight: 300;
+    font-family: Overpass;
+}
+
+img {
+	width: 8vw;
+	left: 2rem;
+	border-radius: 100%;
+}
+
+footer img {
+	width: 3rem;
+	margin: 0 0.5rem;
+	left: 0;
+    bottom: 0;
+	background: white;
+}
+
+#socials img{
+	border: 1px solid var(--yellow);
+}
+
+#socials #insta, #socials #lightroom{
+	border: 1px solid var(--blue);
+}
+footer > a {
+	width: auto;
+	height: auto;
+	border-radius: initial;
+}
+
+#socials{
+	transition: all 0.2s;
+	background: none;
+	backdrop-filter: none;
+}
+
+#socials:hover{
+	transform: scale(1.2);
+}
+
+footer {
+	position: relative;
+	display: flex;
+	bottom: 0;
+	flex-direction: row;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+	width: 100%;
+	padding-bottom: 0.5rem;
+}
+
+section{
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+/*---carousel---*/
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 95vw;
+    margin: 0.5rem;
+    overflow-y: hidden;
+    max-height: 100vh;
+    padding: 1rem;
+  }
+  
+  .carousel {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    margin-bottom: 20px;
+    overflow-y: hidden;
+  }
+  
+  .card {
+    min-width: 1rem;
+    flex: 0 0 auto;
+    /* margin-right: 20px; */
+    margin: 0 0.3rem;
+    scroll-snap-align: start;
+    height: 75vh;
+    background-color: var(--card-bg);
+    max-width: 18rem;
+    border: 0.1rem solid var(--yellow_vibrant);
+    border-radius: 1rem;
+    box-shadow: 5px 5px 10px black;
+    overflow: auto;
+  }
+  
+  .card-body {
+    padding: 1rem;
+    height: auto;
+  }
+  
+  .aboutMe{
+    color: var(--card-bg);
+    padding: 1rem 1rem;
+    margin: 2rem 1rem;
+    border-left: 1px solid var(--blue);
+  }

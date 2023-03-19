@@ -61,7 +61,7 @@
 			"Image": "assets/images/proximus.jpg"
 		}
 	},
-	"School projects": {
+	"Projects": {
 		"1": {
 			"Title": "Plant disease project",
 			"Description": "Working on my first pure AI project was a great opportunity for me to apply my skills to real-world problems. Our task was to create a model that could accurately predict the disease of a plant based on an input image. The project was challenging, but also rewarding. We had to research and experiment with various deep learning techniques to achieve accurate results. I also gained experience in data preprocessing and data augmentation, which proved crucial for achieving optimal performance. By the end of the project, our team had developed a not so highly accurate model that could predict the disease of a plant with good enough accuracy. This experience not only reinforced my passion for AI, but also taught me the importance of collaboration and persistence in achieving success. Overall, this project was a valuable learning experience that prepared me for more complex AI projects in the future.",
