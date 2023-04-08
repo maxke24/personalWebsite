@@ -73,8 +73,8 @@ h2 {
 }
 
 h3 {
-  font-size: 1rem;
-  padding: 0.2rem 0rem;
+  font-size: 1.3rem;
+  padding: 0.5rem 0rem;
   font-family: Karma;
   color: var(--secondary-text);
 }
@@ -168,15 +168,16 @@ section {
   flex: 0 0 auto;
   margin: 0 0.3rem;
   scroll-snap-align: start;
-  background-color: var(--card-background);
+  background-color: var(--card-background-transparant);
   width: 80vw;
   border: 0.1rem solid var(--accent);
   border-radius: 5rem;
-  box-shadow: 5px 5px 10px black;
+  box-shadow: 5px 5px 10px var(--card-background);
   overflow: auto;
   margin: 0.5rem 0.2rem;
   display: flex;
   height: auto;
+  min-height: 3rem;
 }
 
 .card-body {
@@ -199,6 +200,9 @@ section {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   margin: auto;
+  background-color: var(--card-background);
+  border-radius: 1rem;
+  padding: 1rem;
 }
 
 .card-text {
@@ -209,7 +213,7 @@ section {
 .card-blur {
   position: fixed;
   display: none;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   z-index: 1;
   -webkit-backdrop-filter: blur(5px);
@@ -228,7 +232,7 @@ section {
 .aboutMe {
   color: var(--card-bg);
   padding: 1rem 1rem;
-  margin: 2rem 1rem;
+  margin: 1.3rem 1rem;
   border-left: 1px solid var(--accent);
 }
 
@@ -254,6 +258,11 @@ section {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.card::-webkit-scrollbar-track {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 main::-webkit-scrollbar {
