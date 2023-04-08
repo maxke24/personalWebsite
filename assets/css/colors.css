@@ -1,13 +1,25 @@
 :root {
-	--white: #ffffff;
-	--blue: #89cff0;
-	--black: #000000;
-	--yellow_vibrant: #ffd700;
-	--yellow: #d4af37;
-	--yellow_transparent :rgba(212, 175, 55, 0.3);
-	--grey: #aaaaaa;
-	--transparant_black: rgba(0, 0, 0, 0.5);
-	--gradient: linear-gradient(var(
-	--transparant_black), var(--transparant_black)) padding-box, linear-gradient(to right, var(--blue), var(--yellow)) border-box;
-	--card-bg: #FFE4FA;
+  --white: #ffffff;
+  --blue: #89cff0;
+  --black: #000000;
+  --yellow_vibrant: #ffd700;
+  --yellow: #d4af37;
+  --yellow_transparent: rgba(212, 175, 55, 0.3);
+  --grey: #aaaaaa;
+  --transparant_black: rgba(0, 0, 0, 0.5);
+  --gradient: linear-gradient(
+        var(--transparant_black),
+        var(--transparant_black)
+      )
+      padding-box,
+    linear-gradient(to right, var(--blue), var(--yellow)) border-box;
+  --card-bg: #9a8f97;
+
+  --accent: #62b6cb;
+  --primary: rgb(0, 86, 77);
+  --text: #fff8f0;
+  --card-background: #06191c;
+
+  --secondary-text: #bfdbf7;
+  --primary-text: #ffffff;
 }
