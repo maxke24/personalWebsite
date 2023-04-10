@@ -28,7 +28,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   /* background-image: url(../../assets/images/background.png); */
-  background-color: #333333;
+  background-color: var(--background);
   height: auto;
 }
 
@@ -133,6 +133,7 @@ section {
   max-height: 100vh;
   padding: auto;
   border-radius: 1rem;
+  border: 1px solid var(--accent);
 }
 
 .carousel {
@@ -141,10 +142,11 @@ section {
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   overflow-y: hidden;
   box-shadow: inset 0px 0px 20px black;
   padding: 1rem 2rem;
+  border-radius: 1rem;
 }
 
 .card {
@@ -181,11 +183,10 @@ section {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   margin: auto;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: var(--background);
   border-radius: 1rem;
   padding: 1rem;
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
+  border: 1px solid var(--accent);
   width: 80vw;
 }
 
@@ -199,14 +200,19 @@ section {
   display: none;
   height: 100%;
   width: 100%;
-  z-index: 99;
-  /* -webkit-backdrop-filter: blur(5rem);
-  backdrop-filter: blur(5rem); */
-  background-color: rgba(51, 51, 51, 0.95);
+  top: 0;
+  left: 0;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  background-color: rgba(20, 20, 20, 0.6);
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+.card-blur p{
+  display: none;
 }
 
 .card-blur.show {
@@ -249,9 +255,9 @@ section {
 }
 
 .carousel::-webkit-scrollbar-track {
-  margin: 0.5rem;
+  margin: 1rem;
 }
 
-main::-webkit-scrollbar {
+body::-webkit-scrollbar {
   display: none;
 }

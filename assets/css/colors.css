@@ -23,4 +23,16 @@
 
   --secondary-text: #88ff9f;
   --primary-text: var(--accent);
+
+
+
+  --background: #141414;
+  --accent: #5eb3ce;
+  --primary: var(--accent);
+  --text: #fff8f0;
+  --card-background-transparant: #06191c7c;
+  --card-background: #06191c;
+
+  --secondary-text: #d4ebf2;
+  --primary-text: var(--accent);
 }
