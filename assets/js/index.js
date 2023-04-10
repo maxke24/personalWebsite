@@ -6,11 +6,6 @@ function init() {
 	document.body.scrollTop = 0;
 	document.documentElement.scrollTop = 0;
 
-	loadImage('https://drive.google.com/uc?export=view&id=1EYBo6U6DP7N5sKuP3hk5MU-HGROjnuT_', img => {
-		image(img, windowWidth/2, windowHeight/2);
-		console.log("image loaded successfully");
-	  });
-
 	document.querySelectorAll("#next").forEach(btn => btn.addEventListener("click", function(e){
 		e.preventDefault();
 		const top = parseInt(document.querySelector(".slider #container").style.top);

@@ -19,7 +19,6 @@ class Node extends p5.Vector {
 		}
 		strokeWeight(2);
 		fill(22);
-		this.a.position(this.x - 25, this.y - 25);
 		circle(this.x, this.y, this.r);
 
 	}
