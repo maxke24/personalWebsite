@@ -15,12 +15,12 @@
     linear-gradient(to right, var(--blue), var(--yellow)) border-box;
   --card-bg: #9a8f97;
 
-  --accent: #62b6cb;
-  --primary: rgb(0, 86, 77);
+  --accent: #0CCE6B;
+  --primary: var(--accent);
   --text: #fff8f0;
   --card-background-transparant: #06191c7c;
   --card-background: #06191c;
 
-  --secondary-text: #bfdbf7;
-  --primary-text: #ffffff;
+  --secondary-text: #88ff9f;
+  --primary-text: var(--accent);
 }
