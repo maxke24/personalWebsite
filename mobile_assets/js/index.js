@@ -29,8 +29,15 @@ fetch("../../assets/experiences_new.json")
     }
     document.querySelectorAll(".card").forEach((el) => {
       el.addEventListener("click", () => {
+        let active = document.querySelector(".active");
+        if(active){
+          active.classList.toggle("active");
+        }else{
+          el.classList.toggle("active");
+        }
         document.querySelector(".card-blur").classList.toggle("show");
-        el.classList.toggle("active");
+        
+        
       });
     });
   });
