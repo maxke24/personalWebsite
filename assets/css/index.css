@@ -77,8 +77,6 @@ main article {
 	backdrop-filter: blur(4px);
 	border: 1px solid var(--blue);
 	box-shadow: var(--black) 2px 2px 5px 2px;
-	max-height: 80vh;
-	overflow-y: auto;
 }
 
 main article {
@@ -119,6 +117,9 @@ main h2 {
 .scaled > p {
 	color: var(--grey);
 	font-size: 1.6rem;
+	padding: 1rem;
+	max-height: 70vh;
+	overflow: auto;
 }
 
 .scaled > h2{
