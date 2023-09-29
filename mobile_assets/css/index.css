@@ -78,16 +78,7 @@ footer img {
   margin: 0 0.5rem;
   left: 0;
   bottom: 0;
-  background: #2C514C;
-}
-
-#socials img {
-  border: 1px solid #2C514C;
-}
-
-#socials #insta,
-#socials #lightroom {
-  border: 1px solid #2C514C;
+  background: #f5d6b4;
 }
 
 footer > a {
@@ -100,10 +91,6 @@ footer > a {
   transition: all 0.2s;
   background: none;
   backdrop-filter: none;
-}
-
-#socials:hover {
-  transform: scale(1.2);
 }
 
 footer {
@@ -243,7 +230,7 @@ section {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--accent);
+  background: #d86f45;
   border-radius: 1rem;
 }
 
