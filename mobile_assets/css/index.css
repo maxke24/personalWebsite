@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito");
 @import url("https://fonts.googleapis.com/css2?family=Karma");
 @import url("https://fonts.googleapis.com/css2?family=Overpass");
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 
 /*---Fonts---*/
 @font-face {
@@ -30,13 +31,13 @@ body {
   /* background-image: url(../../assets/images/background.png); */
   background-color: #f5d6b4;
   height: auto;
-  font-family: Overpass;
+  font-family: Comfortaa;
+  font-weight: 600;
 }
 
 /*---Text---*/
 h1 {
   font-size: 2rem;
-  font-weight: 500;
 }
 
 h1,
@@ -51,22 +52,19 @@ h2 {
   padding: 0;
   margin-left: 1rem;
   font-size: 1.5rem;
-  font-family: Karma;
-  font-weight: 500;
 }
 
 h3 {
   font-size: 1rem;
-  font-family: Karma;
   color: #f5d6b4;
-  font-weight: 300;
+  font-weight: 500;
 }
 
 p {
   font-size: 1.1rem;
-  font-weight: 300;
-  font-family: Overpass;
-  color: #846B8A;
+  font-weight: medium;
+  color: rgba(0, 0, 0, 0.4);
+  line-height: 1.4;
 }
 
 img {
@@ -159,17 +157,21 @@ section {
   overflow: auto;
 }
 
+.card-title{
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
 .card-body {
-  padding: 0.2rem;
   position: relative;
-  text-align: center;
   margin: auto;
 }
 
 .active .card-text {
   display: block;
   margin-top: 1rem;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  font-weight: normal;
 }
 
 .active {
@@ -218,10 +220,9 @@ section {
 }
 
 .aboutMe {
-  color: #846B8A;
   padding: 1rem 1rem;
   margin: 1.3rem 1rem;
-  border-left: 1px solid #846B8A;
+  border-left: 1px solid rgba(0, 0, 0, 0.4);
 }
 
 /* ########## Scrollbar stuff ########## */
