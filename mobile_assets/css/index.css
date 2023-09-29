@@ -158,8 +158,10 @@ section {
 }
 
 .card-title{
+  max-width: 80vw;
   font-size: 1.5rem;
   font-weight: 600;
+  text-align: center;
 }
 
 .card-body {
