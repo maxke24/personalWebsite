@@ -80,16 +80,16 @@ footer img {
   margin: 0 0.5rem;
   left: 0;
   bottom: 0;
-  background: white;
+  background: #2C514C;
 }
 
 #socials img {
-  border: 1px solid var(--accent);
+  border: 1px solid #2C514C;
 }
 
 #socials #insta,
 #socials #lightroom {
-  border: 1px solid var(--accent);
+  border: 1px solid #2C514C;
 }
 
 footer > a {
