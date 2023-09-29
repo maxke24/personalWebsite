@@ -162,6 +162,7 @@ section {
   font-size: 1.5rem;
   font-weight: 600;
   text-align: center;
+  line-height: 1.4;
 }
 
 .card-body {
@@ -171,7 +172,7 @@ section {
 
 .active .card-text {
   display: block;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   font-size: 0.9rem;
   font-weight: normal;
 }
