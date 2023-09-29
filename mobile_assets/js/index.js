@@ -27,17 +27,30 @@ fetch("../../assets/experiences_new.json")
         }
       }
     }
+    /*  */
+
     document.querySelectorAll(".card").forEach((el) => {
       el.addEventListener("click", () => {
-        let active = document.querySelector(".active");
-        if(active){
-          active.classList.toggle("active");
-        }else{
-          el.classList.toggle("active");
-        }
-        document.querySelector(".card-blur").classList.toggle("show");
-        
-        
+       enableActive(el);
+      //  
       });
     });
   });
+
+  async function enableActive(el){
+    el.classList.add("active");
+    document.querySelector(".card-blur").classList.add("show");
+    await sleep(500);
+    document.querySelector("body").addEventListener("click", disableActive);
+  }
+
+  function disableActive(){
+    
+    document.querySelector("body").removeEventListener("click", disableActive);
+    document.querySelector(".active").classList.remove("active");
+    document.querySelector(".card-blur").classList.remove("show");
+  }
+
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+ }
