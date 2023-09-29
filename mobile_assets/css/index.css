@@ -5,7 +5,7 @@
 /*---Fonts---*/
 @font-face {
   font-family: GreatVibes;
-  src: url(../fonts/GreatVibes-Regular.ttf);
+  src: url(../../assets/fonts/GreatVibes-Regular.ttf);
 }
 
 @font-face {
@@ -28,8 +28,9 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   /* background-image: url(../../assets/images/background.png); */
-  background-color: var(--background);
+  background-color: #f5d6b4;
   height: auto;
+  font-family: Overpass;
 }
 
 /*---Text---*/
@@ -40,13 +41,12 @@ h1 {
 
 h1,
 h2 {
-  color: var(--primary-text);
+  color: #d86f45;
   margin: 1rem;
   position: relative;
 }
 
 h2 {
-  color: var(--primary-text);
   margin-bottom: 1rem;
   padding: 0;
   margin-left: 1rem;
@@ -58,7 +58,7 @@ h2 {
 h3 {
   font-size: 1rem;
   font-family: Karma;
-  color: var(--secondary-text);
+  color: #f5d6b4;
   font-weight: 300;
 }
 
@@ -66,7 +66,7 @@ p {
   font-size: 1.1rem;
   font-weight: 300;
   font-family: Overpass;
-  color: var(--secondary-text);
+  color: #846B8A;
 }
 
 img {
@@ -133,7 +133,6 @@ section {
   max-height: 100vh;
   padding: auto;
   border-radius: 1rem;
-  border: 1px solid var(--accent);
 }
 
 .carousel {
@@ -144,7 +143,7 @@ section {
   scroll-behavior: smooth;
   /* margin-bottom: 1rem; */
   overflow-y: hidden;
-  box-shadow: inset 0px 0px 20px black;
+  box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.4);
   padding: 1rem 2rem;
   border-radius: 1rem;
 }
@@ -152,9 +151,8 @@ section {
 .card {
   flex: 0 0 auto;
   scroll-snap-align: center;
-  background-color: var(--card-background-transparant);
+  background-color: #2C514C;
   border-radius: 5rem;
-  box-shadow: 0 0 10px black;
   display: flex;
   padding: 1rem;
   margin: 0rem 1rem;
@@ -183,7 +181,7 @@ section {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   margin: auto;
-  background-color: var(--background);
+  background-color: #2C514C;
   border-radius: 1rem;
   padding: 1rem;
   border: 1px solid var(--accent);
@@ -192,7 +190,7 @@ section {
 
 .card-text {
   display: none;
-  color: var(--secondary-text);
+  color: #f5d6b4;
 }
 
 .card-blur {
@@ -220,10 +218,10 @@ section {
 }
 
 .aboutMe {
-  color: var(--card-bg);
+  color: #846B8A;
   padding: 1rem 1rem;
   margin: 1.3rem 1rem;
-  border-left: 1px solid var(--accent);
+  border-left: 1px solid #846B8A;
 }
 
 /* ########## Scrollbar stuff ########## */
