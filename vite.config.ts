@@ -17,8 +17,8 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
-  // GitHub Pages deployment configuration
-  base: '/website/',
+  // Custom domain deployment configuration
+  base: '/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
