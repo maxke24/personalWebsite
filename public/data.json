@@ -88,18 +88,6 @@
 
 	"Output": {
 		"1": {
-			"Title": "Data scientist",
-			"Description": "My greatest passion lies in the field of data science. I am most fulfilled when I am creating and refining AI models, constantly striving for the optimal solution. There is something truly satisfying about analyzing data, testing different approaches, and ultimately arriving at the best possible outcome."
-		},
-		"2": {
-			"Title": "Data analyst",
-			"Description": "While my passion lies in data science, I also find myself drawn to the world of data analysis from time to time. Although it may not be my primary focus, I still enjoy the challenge of exploring and interpreting data sets to gain valuable insights. It's always satisfying to see how data analysis can help inform decision-making and improve outcomes, whether it's in the context of business, healthcare, or any other field."
-		},
-		"3": {
-			"Title": "Data engineer",
-			"Description": "Although I have experience in various data-related roles, data engineering is not my strongest area of expertise. I find it challenging and it is not something I particularly enjoy doing. Therefore, I prefer to focus on other aspects of data science that are more aligned with my interests and strengths."
-		},
-		"4": {
 			"Title": "AI Engineer at dotOcean",
 			"Description": "Currently, I'm working as an AI Engineer at dotOcean, where I get to combine my passion for artificial intelligence with cutting-edge robotics technology. My work focuses on developing and implementing solutions using Large Language Models (LLMs) and integrating them with ROS2 (Robot Operating System 2) for autonomous systems. This role allows me to work at the intersection of natural language processing and robotics, creating intelligent systems that can understand and interact with the world in meaningful ways. The work is challenging and exciting, constantly pushing the boundaries of what's possible with AI in real-world applications."
 		}
