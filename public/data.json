@@ -59,10 +59,6 @@
 			"Title": "Proximus, Brussels",
 			"Description": "After working as a programmer for some time, I was given the chance to join the data scientist team for my internship. During this exciting opportunity, I was tasked with reworking an old project and assisting with the data cleaning process. It was a great experience to work with a team of experts in this field and to apply my programming skills to real-world projects.\nThroughout my internship, I gained a deeper understanding of the data science process and the importance of data quality in achieving accurate results. I also learned valuable technical skills such as data preprocessing and cleaning techniques, which are critical for success in this field.Overall, my time with the data scientist team was a challenging and rewarding experience that has deepened my passion for data science. I am excited to continue pursuing this field and look forward to contributing to future projects.",
 			"Image": "assets/images/proximus.jpg"
-		},
-		"5": {
-			"Title": "AI Engineer, dotOcean",
-			"Description": "Currently, I'm working as an AI Engineer at dotOcean, where I get to combine my passion for artificial intelligence with cutting-edge robotics technology. My work focuses on developing and implementing solutions using Large Language Models (LLMs) and integrating them with ROS2 (Robot Operating System 2) for autonomous systems. This role allows me to work at the intersection of natural language processing and robotics, creating intelligent systems that can understand and interact with the world in meaningful ways. The work is challenging and exciting, constantly pushing the boundaries of what's possible with AI in real-world applications."
 		}
 	},
 	"Projects": {
@@ -102,6 +98,10 @@
 		"3": {
 			"Title": "Data engineer",
 			"Description": "Although I have experience in various data-related roles, data engineering is not my strongest area of expertise. I find it challenging and it is not something I particularly enjoy doing. Therefore, I prefer to focus on other aspects of data science that are more aligned with my interests and strengths."
+		},
+		"4": {
+			"Title": "AI Engineer at dotOcean",
+			"Description": "Currently, I'm working as an AI Engineer at dotOcean, where I get to combine my passion for artificial intelligence with cutting-edge robotics technology. My work focuses on developing and implementing solutions using Large Language Models (LLMs) and integrating them with ROS2 (Robot Operating System 2) for autonomous systems. This role allows me to work at the intersection of natural language processing and robotics, creating intelligent systems that can understand and interact with the world in meaningful ways. The work is challenging and exciting, constantly pushing the boundaries of what's possible with AI in real-world applications."
 		}
 	}
 }
